@@ -1,0 +1,16 @@
+.IpodScreen{
+    height: 45%;
+    display: flex;
+    padding: 10px;
+}
+
+.content{
+    width: 85%;
+    height: 85%;
+    margin: auto auto;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 3px solid black;
+    /* display: -webkit-box; */
+    overflow: hidden;
+} 

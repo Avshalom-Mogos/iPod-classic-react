@@ -1,0 +1,13 @@
+.Ipod{
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    max-height: 830px;
+    background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230));
+    margin: auto auto;
+    border-radius: 20px;
+    border-right: #C3CAD2 4px solid;
+    border-left: #909599 4px solid;
+    border-top: #D2D5DA 4px solid;
+    border-bottom: #737278 4px solid;
+}

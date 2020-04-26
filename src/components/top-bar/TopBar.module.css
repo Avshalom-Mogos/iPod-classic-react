@@ -1,0 +1,22 @@
+.TopBar{
+    padding: 4px;
+    border-bottom: 1px outset rgb(79, 124, 173);
+    border-top: 1px outset rgb(79, 124, 173);
+    border-top-left-radius: 5px;
+    /* height: 16%; */
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(rgb(172, 209, 241),rgb(96, 142, 193));
+}
+
+.title{
+    font-weight: 900;
+    font-size: 13px;
+    display: flex;
+}
+
+.battery{
+    color: rgb(58, 113, 114);
+    margin: auto 0;
+    font-size: 17px;
+}

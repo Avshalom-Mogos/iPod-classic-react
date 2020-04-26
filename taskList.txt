@@ -1,0 +1,2 @@
+1. fix bug when screen shrink when console/keybord is open.
+2. fix ok btn style.
