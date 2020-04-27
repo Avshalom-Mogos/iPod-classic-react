@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import {
     handleOkClick,
-    handleWheelMouseDown,
-    handleWheelMouseMove,
+    handleDown,
+    handleMove,
     StopPanMode
 } from '../../logic/inputHandler';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
@@ -17,16 +17,16 @@ const IpodButtons = () => {
         <div className={classes.IpodButtons}>
             <div
                 className={classes.wheel}
-                //desktop
-                onMouseDown={handleWheelMouseDown}
+                //desktop events
+                onMouseDown={handleDown}
                 onMouseUp={StopPanMode}
                 onMouseLeave={StopPanMode}
-                onMouseMove={handleWheelMouseMove}
-                //mobile
-                onTouchStart={handleWheelMouseDown}
+                onMouseMove={(e) => handleMove(e, context.ipodState, context.menuSelected, context.setMenuSelected)}
+                //mobile events
+                onTouchStart={handleDown}
                 onTouchEnd={StopPanMode}
                 onTouchCancel={StopPanMode}
-                onTouchMove={handleWheelMouseMove}
+                onTouchMove={(e) => handleMove(e, context.ipodState, context.menuSelected, context.setMenuSelected)}
             >
                 <div className={classes.topButtons}>
                     <button className={classes.menu}>MENU</button>

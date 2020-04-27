@@ -22,7 +22,7 @@ export const handleOkClick = (objects) => {
     };
 };
 
-
+//change state and unmount prev state after a delay
 const updateState = (prevState, newState) => {
     newState(true);
     setTimeout(() => {
@@ -31,6 +31,7 @@ const updateState = (prevState, newState) => {
 };
 
 //wheel button events
+
 const panMode = {
     active: false,
     speed: 25,
@@ -41,7 +42,7 @@ const panMode = {
 let clockwiseCounter = 0;
 let counterClockwiseCounter = 0;
 
-export const handleWheelMouseDown = (e) => {
+export const handleDown = (e) => {
     panMode.active = true;
     const bounds = e.currentTarget.getBoundingClientRect();
     const posX = e.clientX - bounds.left;
@@ -52,7 +53,7 @@ export const handleWheelMouseDown = (e) => {
 
 export const StopPanMode = () => panMode.active = false;
 
-export const handleWheelMouseMove = (e) => {
+export const handleMove = (e, ipodState, menuSelected, setMenuSelected) => {
 
     if (panMode.active) {
 
@@ -70,16 +71,16 @@ export const handleWheelMouseMove = (e) => {
         };
 
         //get position on wheel
-        const onTop = posY <= radius;
+        // const onTop = posY <= radius;
         const onLeftSide = posX <= radius;
         const onRightSide = !onLeftSide;
-        const onBottom = !onTop;
+        // const onBottom = !onTop;
 
         //get movement direction
         const panUp = posY - panMode.prevPosition.y < 0;
         const panDown = posY - panMode.prevPosition.y > 0;
-        const panLeft = posX - panMode.prevPosition.x < 0;
-        const panRight = posX - panMode.prevPosition.x > 0;
+        // const panLeft = posX - panMode.prevPosition.x < 0;
+        // const panRight = posX - panMode.prevPosition.x > 0;
 
         //update prev mouse position
         panMode.prevPosition.x = posX;
@@ -97,7 +98,10 @@ export const handleWheelMouseMove = (e) => {
             if (clockwiseCounter % panMode.speed === 0) {
                 console.log("RIGHT");
                 // window.navigator.vibrate([200])
-            }
+                if (ipodState === 'menu' && menuSelected < 3) {
+                    menuNavigate(menuSelected, setMenuSelected, 'right');
+                };
+            };
             return
         };
 
@@ -109,9 +113,19 @@ export const handleWheelMouseMove = (e) => {
                 console.log("LEFT");
 
                 // navigator.vibrate(200)
-            }
+                if (ipodState === 'menu' && menuSelected > 0) {
+                    menuNavigate(menuSelected, setMenuSelected, 'left');
+                };
+            };
             return
         };
     };
 };
 
+const menuNavigate = (menuSelected, setMenuSelected, direction) => {
+    if (direction === 'right') {
+        setMenuSelected(menuSelected + 1);
+    } else if (direction === 'left') {
+        setMenuSelected(menuSelected - 1);
+    };
+}

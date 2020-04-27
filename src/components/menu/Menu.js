@@ -5,7 +5,7 @@ import { IpodStateContext } from '../../contexts/IpodStateContext';
 
 
 const Menu = () => {
-    const { menuSelected, setMenuSelected } = useContext(IpodStateContext);
+    const { menuSelected } = useContext(IpodStateContext);
     return (
         <div className={classes.Menu}>
             <div className={classes.leftPanel}>

@@ -9,7 +9,7 @@ export const IpodStateProvider = (props) => {
     const [toggleCoverflow, setToggleCoverflow] = useState(false);
 
     const [isOn, setIsOn] = useState(false);
-    const [menuSelected, setMenuSelected] = useState(1);
+    const [menuSelected, setMenuSelected] = useState(0);
     return (
         <IpodStateContext.Provider value={{
             ipodState,
