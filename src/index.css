@@ -11,4 +11,3 @@ html, body ,#root{
   /* disable refresh on pull down on mobile */
   overscroll-behavior: contain;
 }
-
