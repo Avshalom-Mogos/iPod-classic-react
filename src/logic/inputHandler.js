@@ -1,6 +1,20 @@
-export const handleOkClick = (objects) => {
+export const handleMenuClick = (context) => {
 
-    console.log(objects);
+    console.log(context);
+    const {
+        ipodState,
+        flipCard,
+        setflipCard
+    } = context;
+
+    if (ipodState === 'coverflow') {
+        setflipCard(!flipCard)
+    };
+}
+
+
+export const handleOkClick = (context) => {
+
 
     const {
         ipodState,
@@ -9,7 +23,7 @@ export const handleOkClick = (objects) => {
         setToggleScreenSaver,
         setToggleMenu,
         setToggleCoverflow,
-    } = objects;
+    } = context;
 
     if (ipodState === 'screenSaver') {
         setIsOn(true);
@@ -34,7 +48,7 @@ const updateState = (prevState, newState) => {
 
 const panMode = {
     active: false,
-    speed: 25,
+    speed: 15,
     direction: '',
     prevPosition: { x: 0, y: 0 }
 };
@@ -53,7 +67,17 @@ export const handleDown = (e) => {
 
 export const StopPanMode = () => panMode.active = false;
 
-export const handleMove = (e, ipodState, menuSelected, setMenuSelected) => {
+export const handleMove = (e, context) => {
+    const {
+        ipodState,
+        menuSelected,
+        setMenuSelected,
+        coverflowSelectedIndex,
+        setCoverflowSelectedIndex,
+        albums,
+        flipCard
+    } = context;
+
 
     if (panMode.active) {
 
@@ -99,8 +123,10 @@ export const handleMove = (e, ipodState, menuSelected, setMenuSelected) => {
                 console.log("RIGHT");
                 // window.navigator.vibrate([200])
                 if (ipodState === 'menu' && menuSelected < 3) {
-                    menuNavigate(menuSelected, setMenuSelected, 'right');
-                };
+                    setMenuSelected(menuSelected + 1);
+                } else if (ipodState === 'coverflow' && coverflowSelectedIndex < albums.length - 1 && !flipCard) {
+                    setCoverflowSelectedIndex(coverflowSelectedIndex + 1)
+                }
             };
             return
         };
@@ -114,18 +140,13 @@ export const handleMove = (e, ipodState, menuSelected, setMenuSelected) => {
 
                 // navigator.vibrate(200)
                 if (ipodState === 'menu' && menuSelected > 0) {
-                    menuNavigate(menuSelected, setMenuSelected, 'left');
-                };
+                    setMenuSelected(menuSelected - 1);
+                } else if (ipodState === 'coverflow' && coverflowSelectedIndex > 0 && !flipCard) {
+                    setCoverflowSelectedIndex(coverflowSelectedIndex + -1)
+                }
             };
             return
         };
     };
 };
 
-const menuNavigate = (menuSelected, setMenuSelected, direction) => {
-    if (direction === 'right') {
-        setMenuSelected(menuSelected + 1);
-    } else if (direction === 'left') {
-        setMenuSelected(menuSelected - 1);
-    };
-}
