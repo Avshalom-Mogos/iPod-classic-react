@@ -4,11 +4,13 @@ export const handleMenuClick = (context) => {
     const {
         ipodState,
         flipCard,
-        setflipCard
+        setFlipCard,
+        setFlipCardSelected,
     } = context;
 
     if (ipodState === 'coverflow') {
-        setflipCard(!flipCard)
+        setFlipCardSelected(0);
+        setFlipCard(!flipCard);
     };
 }
 
@@ -75,7 +77,9 @@ export const handleMove = (e, context) => {
         coverflowSelectedIndex,
         setCoverflowSelectedIndex,
         albums,
-        flipCard
+        flipCard,
+        flipCardSelected,
+        setFlipCardSelected
     } = context;
 
 
@@ -126,6 +130,8 @@ export const handleMove = (e, context) => {
                     setMenuSelected(menuSelected + 1);
                 } else if (ipodState === 'coverflow' && coverflowSelectedIndex < albums.length - 1 && !flipCard) {
                     setCoverflowSelectedIndex(coverflowSelectedIndex + 1)
+                } else if (ipodState === 'coverflow' && flipCardSelected < albums[coverflowSelectedIndex].items.length - 1 && flipCard) {
+                    setFlipCardSelected(flipCardSelected + 1)
                 }
             };
             return
@@ -143,6 +149,8 @@ export const handleMove = (e, context) => {
                     setMenuSelected(menuSelected - 1);
                 } else if (ipodState === 'coverflow' && coverflowSelectedIndex > 0 && !flipCard) {
                     setCoverflowSelectedIndex(coverflowSelectedIndex + -1)
+                } else if (ipodState === 'coverflow' && flipCardSelected > 0 && flipCard) {
+                    setFlipCardSelected(flipCardSelected - 1);
                 }
             };
             return

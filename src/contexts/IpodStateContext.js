@@ -1,18 +1,22 @@
 import React, { createContext, useState } from 'react';
-import { data } from '../components/coverflow/data';
+import data from './data';
 
 export const IpodStateContext = createContext();
 export const IpodStateProvider = (props) => {
-    const [ipodState, setIpodState] = useState('coverflow');
+    const [ipodState, setIpodState] = useState('player');
+
+    //togglers
     const [toggleScreenSaver, setToggleScreenSaver] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
-    const [toggleCoverflow, setToggleCoverflow] = useState(true);
+    const [toggleCoverflow, setToggleCoverflow] = useState(false);
+    const [togglePlayer, setTogglePlayer] = useState(true);
 
     const [isOn, setIsOn] = useState(false);
     const [menuSelected, setMenuSelected] = useState(0);
     const [coverflowSelectedIndex, setCoverflowSelectedIndex] = useState(3);
-    const [albums, setAlbums] = useState([...data]);
-    const [flipCard, setflipCard] = useState(false);
+    const [albums, setAlbums] = useState(data);
+    const [flipCard, setFlipCard] = useState(false);
+    const [flipCardSelected, setFlipCardSelected] = useState(0);
 
 
     return (
@@ -29,12 +33,16 @@ export const IpodStateProvider = (props) => {
             setToggleMenu,
             toggleCoverflow,
             setToggleCoverflow,
+            togglePlayer,
+            setTogglePlayer,
             coverflowSelectedIndex,
             setCoverflowSelectedIndex,
             albums,
             setAlbums,
             flipCard,
-            setflipCard
+            setFlipCard,
+            flipCardSelected,
+            setFlipCardSelected
         }}>
             {props.children}
         </IpodStateContext.Provider>

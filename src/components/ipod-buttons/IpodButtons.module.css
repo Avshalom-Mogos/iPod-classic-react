@@ -15,15 +15,25 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     /* gap: 0.5rem; */
+    padding: 15px;
+    
+}
+
+
+.menu, .backward, .forward{
+    color: rgb(172, 175, 190);
+    font-size: 1rem;
 }
 
 .menu{
     grid-column: 2 / 3;
+    align-self: flex-start;
 }
 
 .backward{
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    text-align: left;
 }
 
 .ok{
@@ -31,20 +41,28 @@
     grid-row: 2 / 3;
     background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230));
     border-radius: 50%;
+    transform: scale(1.3)
 }
 
 .forward{
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    text-align: right;
 }
 
 .playPause{
     grid-column: 2 / 3;
+    align-self: flex-end;
+    color: rgb(172, 175, 190);
+}
+ 
+.playPause i{
+    padding: 3px;
 }
 
+
 .wheel button{
-     background-color: transparent;
-     outline: none;
-     border: none;
-     color: rgb(172, 175, 190);
+    background-color: transparent;
+    outline: none;
+    border: none;
 }

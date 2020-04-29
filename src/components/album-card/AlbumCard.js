@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect, createRef } from 'react';
 import classes from './AlbumCard.module.css';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
 
@@ -6,7 +6,20 @@ import { IpodStateContext } from '../../contexts/IpodStateContext';
 const AlbumCard = (props) => {
 
     const { title, items, thumbnail, index, styles } = props;
-    let { coverflowSelectedIndex, flipCard } = useContext(IpodStateContext);
+    let { coverflowSelectedIndex, flipCard, flipCardSelected } = useContext(IpodStateContext);
+
+    useEffect(() => {
+
+        if (index === coverflowSelectedIndex && flipCard) {
+
+            sctrollToView(elementsRef.current[flipCardSelected].current)
+        }
+        // console.log(elementsRef);
+
+
+
+
+    })
 
     const flip = () => {
         if (flipCard && index === coverflowSelectedIndex) {
@@ -16,6 +29,18 @@ const AlbumCard = (props) => {
             };
         };
     };
+
+    const sctrollToView = (element) => {
+        const scrollIntoViewOptions = { behavior: 'smooth', block: "nearest" };
+        element.scrollIntoView(scrollIntoViewOptions);
+    }
+
+
+    const elementsRef = useRef(items.map(() => createRef()));
+
+    window.elementsRef = elementsRef;
+
+
 
     return (
         <div className={classes.AlbumCard} style={styles}>
@@ -28,11 +53,15 @@ const AlbumCard = (props) => {
                         <span>{title}</span>
                     </div>
                     <ul>
-                        {items.map((song, index) => {
+                        {items.map((song, i) => {
                             return (
-                                <li key={index}>
+                                <li
+                                    key={i}
+                                    className={i === flipCardSelected ? classes.selected : ''}
+                                    ref={elementsRef.current[i]}
+                                >
                                     <span>{song.title}</span>
-                                    <span>{song.duration}</span>
+                                    <span>{new Date(song.duration * 1000).toISOString().substr(15, 4)}</span>
                                 </li>
                             )
                         })}
