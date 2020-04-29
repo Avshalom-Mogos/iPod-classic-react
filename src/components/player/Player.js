@@ -1,39 +1,49 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import TopBar from '../top-bar/TopBar';
 import classes from './Player.module.css';
-import YouTube from 'react-youtube';
+import { IpodStateContext } from '../../contexts/IpodStateContext';
+import ProgressBar from '../progress-bar/ProgressBar';
 
 
 const Player = () => {
-    // const { loadPlaylist, getPlaylistData } = useContext(PlaylistContext);
 
-    // const playerRef = {};
-    const opts = {
-        height: '0',
-        width: '0',
-        host: 'https://www.youtube.com',
-        playerVars: {}
-    };
+    const {
+        coverflowSelectedIndex,
+        albums,
+        flipCardSelected,
+        player
+    } = useContext(IpodStateContext);
 
-    // console.log(window.location.origin); ---> http://localhost:3000
+    const currentAlbum = albums[coverflowSelectedIndex];
+    const currentSong = currentAlbum.items[flipCardSelected];
 
+    useEffect(() => {
+        //load playlist
+        console.log(player);
+        
+        player.obj.cuePlaylist({
+            listType: 'playlist',
+            list: currentAlbum.id,
+        });
+    }, [albums[coverflowSelectedIndex].id]);
 
-    const onReady = (e) => {
-        // access to player in all event handlers via event.target
-        // loadPlaylist(e, hits_2000);
-        console.log("Ready: ", e.target);
-
-    }
-
-    const onStateChange = (e) => {
-        // getPlaylistData(e)
-        console.log("State Change: ", e);
-    }
 
     return (
         <div className={classes.Player}>
-
-            <YouTube opts={opts} onReady={onReady} onStateChange={onStateChange} />
+            <TopBar title='Now Playing' />
+            <div className={classes.container}>
+                <div className={classes.songInfoContainer}>
+                    <img src={currentAlbum.cover} alt="albumCover" />
+                    <div className={classes.songInfo}>
+                        <p>{currentSong.title}</p>
+                        <p>{currentAlbum.artist}</p>
+                        <p>{currentAlbum.name}</p>
+                        <p>{`${flipCardSelected + 1} of ${currentAlbum.items.length}`}</p>
+                    </div>
+                </div>
+                <ProgressBar duration={currentSong.duration} />
+            </div>
         </div>
     )
-}
+};
 export default Player;

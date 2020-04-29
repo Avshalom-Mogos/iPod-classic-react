@@ -1,6 +1,6 @@
 .Ipod{
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    width: 100%;
     max-width: 400px;
     max-height: 830px;
     background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230));

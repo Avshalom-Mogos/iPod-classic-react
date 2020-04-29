@@ -3,20 +3,40 @@ import data from './data';
 
 export const IpodStateContext = createContext();
 export const IpodStateProvider = (props) => {
-    const [ipodState, setIpodState] = useState('player');
+    const [ipodState, setIpodState] = useState('coverflow');
+    const [isOn, setIsOn] = useState(false);
+    const [albums, setAlbums] = useState(data);
 
     //togglers
     const [toggleScreenSaver, setToggleScreenSaver] = useState(false);
     const [toggleMenu, setToggleMenu] = useState(false);
-    const [toggleCoverflow, setToggleCoverflow] = useState(false);
-    const [togglePlayer, setTogglePlayer] = useState(true);
+    const [toggleCoverflow, setToggleCoverflow] = useState(true);
+    const [togglePlayer, setTogglePlayer] = useState(false);
 
-    const [isOn, setIsOn] = useState(false);
+    //selected
     const [menuSelected, setMenuSelected] = useState(0);
     const [coverflowSelectedIndex, setCoverflowSelectedIndex] = useState(3);
-    const [albums, setAlbums] = useState(data);
     const [flipCard, setFlipCard] = useState(false);
     const [flipCardSelected, setFlipCardSelected] = useState(0);
+
+    //player
+    const initialPlayer = {
+        obj: {},
+        state: -1 //unstarted
+    };
+    const [player, setPlayer] = useState(initialPlayer)
+
+
+    const onStateChange = (e) => {
+        setPlayer({ ...player, state: e.data });
+        if (e.data === window.YT.PlayerState.CUED) {
+            console.log(player.obj);
+
+            e.target.playVideoAt(flipCardSelected);
+        };
+    };
+
+    // const [onStateChange, setOnStateChange] = useState(() => test);
 
 
     return (
@@ -42,7 +62,10 @@ export const IpodStateProvider = (props) => {
             flipCard,
             setFlipCard,
             flipCardSelected,
-            setFlipCardSelected
+            setFlipCardSelected,
+            player,
+            setPlayer,
+            onStateChange,
         }}>
             {props.children}
         </IpodStateContext.Provider>
