@@ -5,7 +5,7 @@ const handleMenuClick = (context) => {
         ipodState,
         flipCard,
         setFlipCard,
-        setFlipCardSelected,
+        // setFlipCardSelected,
     } = context;
 
     if (ipodState === 'coverflow') {

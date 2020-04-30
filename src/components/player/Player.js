@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import TopBar from '../top-bar/TopBar';
-import classes from './Player.module.css';
-import { IpodStateContext } from '../../contexts/IpodStateContext';
 import ProgressBar from '../progress-bar/ProgressBar';
+import { IpodStateContext } from '../../contexts/IpodStateContext';
+import classes from './Player.module.css';
 
 
 const Player = () => {
@@ -19,13 +19,11 @@ const Player = () => {
 
     useEffect(() => {
         //load playlist
-        console.log(player);
-        
         player.obj.cuePlaylist({
             listType: 'playlist',
             list: currentAlbum.id,
         });
-    }, [albums[coverflowSelectedIndex].id]);
+    }, [currentAlbum.id, player.obj]);
 
 
     return (

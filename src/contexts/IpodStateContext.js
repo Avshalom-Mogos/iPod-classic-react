@@ -27,18 +27,6 @@ export const IpodStateProvider = (props) => {
     const [player, setPlayer] = useState(initialPlayer)
 
 
-    const onStateChange = (e) => {
-        setPlayer({ ...player, state: e.data });
-        if (e.data === window.YT.PlayerState.CUED) {
-            console.log(player.obj);
-
-            e.target.playVideoAt(flipCardSelected);
-        };
-    };
-
-    // const [onStateChange, setOnStateChange] = useState(() => test);
-
-
     return (
         <IpodStateContext.Provider value={{
             ipodState,
@@ -64,8 +52,7 @@ export const IpodStateProvider = (props) => {
             flipCardSelected,
             setFlipCardSelected,
             player,
-            setPlayer,
-            onStateChange,
+            setPlayer
         }}>
             {props.children}
         </IpodStateContext.Provider>

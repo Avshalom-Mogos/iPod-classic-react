@@ -8,23 +8,19 @@ const ProgressBar = (props) => {
     const { duration } = props;
     const { player } = useContext(IpodStateContext);
     const [currentTime, setCurrentTime] = useState(0);
+    const [intervalId, setIntervalId] = useState(0);
 
-    // useEffect(() => {
-    //     trackTime()
-    // },[currentTime])
+    useEffect(() => {
+        if (player.state === window.YT.PlayerState.PLAYING) {
+            const interval = setInterval(() => setCurrentTime(player.obj.getCurrentTime()), 1000);
+            setIntervalId(interval);
+        } else {
+            clearInterval(intervalId)
+        };
+    }, [player.state]);
 
     const percentageCompleted = ((currentTime / duration) * 100);
     const formatTime = (time) => new Date(time * 1000).toISOString().substr(15, 4);
-
-    const trackTime = () => {
-        setInterval(() => {
-            setCurrentTime(player.obj.getCurrentTime());
-            console.log(player.obj.getCurrentTime());
-
-        }, 1000);
-    };
-
-    //trackTime()
 
     return (
         <div className={classes.progressBarContainer}>
