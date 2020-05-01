@@ -60,7 +60,8 @@ const Coverflow = () => {
                                 key={index}
                                 index={index}
                                 styles={styles(index)}
-                                title={album.name}
+                                name={album.name}
+                                artist={album.artist}
                                 items={album.items}
                                 thumbnail={album.cover}
                             />

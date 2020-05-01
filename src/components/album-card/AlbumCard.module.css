@@ -53,38 +53,43 @@
 
 .back{
     transform: rotateY(180deg);
-    border: 1px solid rgb(96, 151, 210);
-    background-color: rgb(147, 208, 255);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border: 1px solid rgb(91, 94, 114);
 }
 
-/* .inner:hover{
-    transform: rotateY(180deg) scale(1.7,1.2);
-    height: 145%;
-} */
 
-.albumName{
+.albumInfo{
     width: 100%;
-    height: 25%;
+    height: 30%;
     font-size: 10px;
     padding: 5px;
-    display: flex;
     color: white;
-    background-image: linear-gradient(rgb(52, 107, 155),rgb(72, 136, 182));
-    border-bottom: 2px outset rgb(52, 99, 149);
+    background-image: linear-gradient(rgb(48, 65, 118),rgb(68, 87, 143));
+    border-bottom: 1px outset rgb(52, 99, 149);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.albumName span{
-    margin: auto auto;
+.albumInfoName , .albumInfoArtist{
+    padding: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
+.albumInfoName{
+    text-transform: capitalize;
+    /* font-size: 0.5rem; */
+}
+
+.albumInfoArtist{
+    color: rgba(255,255,255,0.7)
+}
+
 .back ul{
     width: 100%;
-    height: 75%;
-    background-color: rgb(147, 208, 255);
+    height: 70%;
+    background-color: white;
     list-style: none;
     overflow: auto;
     /* scroll-behavior: smooth; */

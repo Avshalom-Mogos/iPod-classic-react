@@ -13,7 +13,7 @@
 .leftPanel{
     width: 50%;
     height: 100%;
-    background-color: rgb(150, 206, 255);
+    background-color: white;
     float: left;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -43,33 +43,25 @@
     justify-content: space-between;
 }
 
-.items ul li:last-child{
-    border-bottom-left-radius: 5px; 
-}
-
 .items li p{
     margin: auto 0;
 }
 
 .items li i{
     margin: auto 0;
-    font-size: 11px;
-    color: rgb(150, 206, 255);
+    font-size: 13px;
+    color: white;
 }
 
 .selected{
     border-bottom: 1px outset rgb(75, 142, 213);
     border-top: 1px outset rgb(75, 142, 213);
     background-image: linear-gradient(rgb(93, 168, 231),rgb(48, 130, 219));
-    color: rgb(150, 206, 255);
+    color: white;
 }
 
 .img{
     width: 50%;
     height: 100%;
     float: right;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-image: url('./NASA.jpg');
-    background-size: 100% 100%;
 }

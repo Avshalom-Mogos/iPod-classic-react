@@ -5,7 +5,7 @@ import { IpodStateContext } from '../../contexts/IpodStateContext';
 
 const AlbumCard = (props) => {
 
-    const { title, items, thumbnail, index, styles } = props;
+    const { name, artist, items, thumbnail, index, styles } = props;
     let { coverflowSelectedIndex, flipCard, flipCardSelected } = useContext(IpodStateContext);
 
     useEffect(() => {
@@ -49,8 +49,9 @@ const AlbumCard = (props) => {
                     <img src={thumbnail} alt="album img" />
                 </div>
                 <div className={classes.back}>
-                    <div className={classes.albumName}>
-                        <span>{title}</span>
+                    <div className={classes.albumInfo}>
+                        <div className={classes.albumInfoName}>{name}</div>
+                        <div className={classes.albumInfoArtist}>{artist}</div>
                     </div>
                     <ul>
                         {items.map((song, i) => {

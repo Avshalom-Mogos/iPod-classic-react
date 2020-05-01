@@ -3,11 +3,12 @@
     width: 100%;
     max-width: 400px;
     max-height: 830px;
-    background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230));
+    /* background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230)); OLD */
+    background-image: linear-gradient(rgb(98, 96, 99),rgb(46, 46, 46));
     margin: auto auto;
-    border-radius: 20px;
-    border-right: #C3CAD2 5px outset;
+    /* border-radius: 20px; */
+    /* border-right: #C3CAD2 5px outset;
     border-left: #909599 5px outset;
     border-top: #D2D5DA 5px outset;
-    border-bottom: #737278 5px outset;
+    border-bottom: #737278 5px outset; */
 }

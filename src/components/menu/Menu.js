@@ -1,11 +1,19 @@
-import React, { useContext } from 'react';
-import classes from './Menu.module.css';
+import React, { useContext, useEffect, useState } from 'react';
 import TopBar from '../top-bar/TopBar';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
+import classes from './Menu.module.css';
 
 
 const Menu = () => {
-    const { menuSelected } = useContext(IpodStateContext);
+    const { menuSelected, albums } = useContext(IpodStateContext);
+    const [url, setUrl] = useState('');
+
+    useEffect(() => {
+        const randIndex = Math.floor(Math.random() * albums.length);
+        const url = albums[randIndex].cover;
+        setUrl(url);
+    }, [albums])
+
     return (
         <div className={classes.Menu}>
             <div className={classes.leftPanel}>
@@ -31,7 +39,7 @@ const Menu = () => {
                     </ul>
                 </div>
             </div>
-            <div className={classes.img}></div>
+            <img className={classes.img} src={url} alt="selectedImg"></img>
         </div>
     )
 };

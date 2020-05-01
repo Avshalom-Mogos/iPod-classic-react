@@ -1,7 +1,7 @@
 .Player{
     width: 100%;
     height: 100%;
-    background-color: floralwhite;
+    background-color: white;
     animation: slide-in 400ms ease-out forwards;
     position: absolute;
     display: flex;
@@ -15,32 +15,52 @@
 
 .container{
     flex-grow: 1;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    padding: 2px;
-    /* border: 1px solid blue; */
+    position: relative;
+}
+
+.spacingContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .songInfoContainer{
     width: 100%;
-    height: 75%;
+    height: 65%;
     perspective: 600px;
-    /* border: 1px solid blue; */
     display: flex;
+    position: relative;
 }
 
 .songInfoContainer img{
     margin: 10px auto;
-    width: 50%;
-    height: 75%;
+    width: 55%;
+    height: 100%;
     transform: rotateY(45deg);
-    -webkit-box-reflect: below 0 linear-gradient(to bottom, transparent,transparent,transparent,transparent,rgba(0,0,0,0.5));
+    -webkit-box-reflect: below 0 linear-gradient(to bottom, transparent,transparent,transparent,rgba(0,0,0,0.5));
 }
 
 .songInfo{
+    margin: auto;
     padding: 5px;
-    width: 50%;
-    height: 100%;
-    font-size: 16px;
+    width: 45%;
+    height: 80%;
+    font-size: 18px;
+}
+
+.songInfoTitle{
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+.songInfoArtist, .songInfoAlbumName, .songInfoIndex{
+    color:rgb(130, 130, 130);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }

@@ -24,11 +24,15 @@ const ProgressBar = (props) => {
 
     return (
         <div className={classes.progressBarContainer}>
-            <span className={classes.currentTime}>{formatTime(currentTime)}</span>
-            <span className={classes.progressBar}>
+            <div className={classes.currentTime}>
+                <p>{formatTime(currentTime)}</p>
+            </div>
+            <div className={classes.progressBar}>
                 <div className={classes.progressBarFill} style={{ width: percentageCompleted + "%" }}></div>
-            </span>
-            <span className={classes.endTime}>{formatTime(duration)}</span>
+            </div>
+            <div className={classes.endTime}>
+                <p>{`-${formatTime(duration - currentTime)}`}</p>
+            </div>
         </div >
     )
 };

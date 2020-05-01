@@ -33,13 +33,13 @@ const Player = () => {
                 <div className={classes.songInfoContainer}>
                     <img src={currentAlbum.cover} alt="albumCover" />
                     <div className={classes.songInfo}>
-                        <p>{currentSong.title}</p>
-                        <p>{currentAlbum.artist}</p>
-                        <p>{currentAlbum.name}</p>
-                        <p>{`${flipCardSelected + 1} of ${currentAlbum.items.length}`}</p>
+                        <p className={classes.songInfoTitle}>{currentSong.title}</p>
+                        <p className={classes.songInfoArtist}>{currentAlbum.artist}</p>
+                        <p className={classes.songInfoAlbumName}>{currentAlbum.name}</p>
+                        <p className={classes.songInfoIndex}>{`${flipCardSelected + 1} of ${currentAlbum.items.length}`}</p>
                     </div>
                 </div>
-                <ProgressBar duration={currentSong.duration} />
+            <ProgressBar duration={currentSong.duration} />
             </div>
         </div>
     )

@@ -3,14 +3,14 @@ import data from './data';
 
 export const IpodStateContext = createContext();
 export const IpodStateProvider = (props) => {
-    const [ipodState, setIpodState] = useState('menu');
+    const [ipodState, setIpodState] = useState('coverflow');
     const [isOn, setIsOn] = useState(false);
     const [albums, setAlbums] = useState(data);
 
     //togglers
     const [toggleScreenSaver, setToggleScreenSaver] = useState(false);
-    const [toggleMenu, setToggleMenu] = useState(true);
-    const [toggleCoverflow, setToggleCoverflow] = useState(false);
+    const [toggleMenu, setToggleMenu] = useState(false);
+    const [toggleCoverflow, setToggleCoverflow] = useState(true);
     const [togglePlayer, setTogglePlayer] = useState(false);
 
     //selected
