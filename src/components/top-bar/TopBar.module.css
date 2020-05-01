@@ -1,22 +1,45 @@
 .TopBar{
-    padding: 4px;
-    border-bottom: 1px outset rgb(79, 124, 173);
-    border-top: 1px outset rgb(79, 124, 173);
-    border-top-left-radius: 5px;
-    /* height: 16%; */
+    padding: 5px;
+    border-bottom: 1px outset rgb(118, 136, 141); 
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(rgb(172, 209, 241),rgb(96, 142, 193));
+    background-image: linear-gradient(rgb(249, 249, 249),rgb(151, 156, 160));
 }
 
 .title{
     font-weight: 900;
     font-size: 13px;
+}
+
+.icons{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
 }
 
 .battery{
-    color: rgb(58, 113, 114);
+    display: flex;
+}
+
+.batteryHead{
+    width: 2px;
+    height: 5px;
     margin: auto 0;
-    font-size: 17px;
+    background-color: rgb(134, 152, 144);
+}
+
+.batteryBody{
+    width: 28px;
+    height: 13px;
+    border: 1px solid rgb(134, 152, 144);
+    background-image: linear-gradient(rgb(184, 234, 145),rgb(81, 152, 54));
+   
+}
+
+.playPause{
+    line-height: 1px;
+    font-size: 0.7rem;
+    color: rgb(120, 200, 249);
+    text-shadow: 2px 0 0 rgb(88, 144, 196), -1px 0 0 rgb(88, 144, 196), 0 1px 0 rgb(88, 144, 196), 0 -1px 0 rgb(88, 144, 196), 1px 1px rgb(88, 144, 196), -1px -1px 0 rgb(88, 144, 196), 1px -1px 0 rgb(88, 144, 196), -1px 1px 0 rgb(88, 144, 196);
 }
