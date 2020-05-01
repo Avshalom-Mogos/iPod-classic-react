@@ -1,3 +1,4 @@
 1. fix bug when screen shrink when console/keybord is open.
 2. fix ok btn style.
 3. fix bug on daft punk - too long (song duration is messed up)
+4. fix bug on player cover art reflection

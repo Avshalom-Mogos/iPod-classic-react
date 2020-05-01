@@ -26,8 +26,8 @@
     /* -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white));  */
     /* -webkit-box-reflect: below 0 linear-gradient(transparent,transparent,transparent,rgba(0,0,0,0.2)); */
     /* border: 1px solid red; */
-    /* will-change: transform;
-    translate: translateZ(0); */
+     /* will-change: transform; */
+    /*translate: translateZ(0); */
 }
 
 .front, .back{
@@ -104,7 +104,7 @@
 }
 
 .back li{
-   font-size: 8px;
+   font-size: 10px;
    font-weight: 600;
    padding: 5px;
    display: flex;

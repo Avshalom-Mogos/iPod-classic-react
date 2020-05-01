@@ -38,8 +38,8 @@ const Player = () => {
                         <p className={classes.songInfoAlbumName}>{currentAlbum.name}</p>
                         <p className={classes.songInfoIndex}>{`${flipCardSelected + 1} of ${currentAlbum.items.length}`}</p>
                     </div>
+                    <ProgressBar duration={currentSong.duration} />
                 </div>
-            <ProgressBar duration={currentSong.duration} />
             </div>
         </div>
     )
