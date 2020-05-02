@@ -4,11 +4,14 @@ const handleOkClick = (context) => {
         ipodState,
         setIsOn,
         flipCard,
+        setFlipCard,
         setIpodState,
         setToggleScreenSaver,
         setToggleMenu,
         setToggleCoverflow,
-        setTogglePlayer
+        setTogglePlayer,
+        menuSelected,
+        setLoadPlaylist
     } = context;
 
     //change states with a delay
@@ -17,13 +20,27 @@ const handleOkClick = (context) => {
         setIpodState('menu');
         updateState(setToggleScreenSaver, setToggleMenu);
     } else if (ipodState === 'menu') {
-        setIpodState('coverflow');
-        updateState(setToggleMenu, setToggleCoverflow);
-    } else if (ipodState === 'coverflow' && flipCard) {
-        setIpodState('player');
-        updateState(setToggleCoverflow, setTogglePlayer);
-    };
+        handleMenuState({
+            setIpodState,
+            setToggleMenu,
+            setToggleCoverflow,
+            setTogglePlayer,
+            menuSelected,
+            setLoadPlaylist
+        });
+
+    } else if (ipodState === 'coverflow') {
+
+        if (flipCard) {
+            setIpodState('player');
+            updateState(setToggleCoverflow, setTogglePlayer);
+        } else {
+            // setFlipCardSelected(0);
+            setFlipCard(!flipCard);
+        };
+    }
 };
+export default handleOkClick;
 
 //change state and unmount prev state after a delay
 const updateState = (prevState, newState) => {
@@ -32,4 +49,18 @@ const updateState = (prevState, newState) => {
         prevState(false);
     }, 400);
 };
-export default handleOkClick;
+
+const handleMenuState = (props) => {
+
+    console.log(props);
+  
+
+    if (props.menuSelected === 0) {
+        props.setIpodState('coverflow');
+        updateState(props.setToggleMenu, props.setToggleCoverflow);
+    } else if (props.menuSelected === 1) {
+        props.setLoadPlaylist(false);
+        props.setIpodState('player');
+       updateState(props.setToggleMenu, props.setTogglePlayer);
+    };
+};

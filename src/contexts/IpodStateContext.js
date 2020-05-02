@@ -13,9 +13,16 @@ export const IpodStateProvider = (props) => {
     const [toggleCoverflow, setToggleCoverflow] = useState(true);
     const [togglePlayer, setTogglePlayer] = useState(false);
 
+    //set zindex 
+    const setZindex = (stateName) => {
+        if (stateName === ipodState) return '55';
+        return ''
+    };
+
     //selected
+    const initialSelected = Math.floor(albums.length/2);
+    const [coverflowSelectedIndex, setCoverflowSelectedIndex] = useState(2 || initialSelected); //change this later
     const [menuSelected, setMenuSelected] = useState(0);
-    const [coverflowSelectedIndex, setCoverflowSelectedIndex] = useState(3);
     const [flipCard, setFlipCard] = useState(false);
     const [flipCardSelected, setFlipCardSelected] = useState(0);
 
@@ -24,7 +31,8 @@ export const IpodStateProvider = (props) => {
         obj: {},
         state: -1 //unstarted
     };
-    const [player, setPlayer] = useState(initialPlayer)
+    const [player, setPlayer] = useState(initialPlayer);
+    const [loadPlaylist, setLoadPlaylist] = useState(false);
 
 
     return (
@@ -52,7 +60,10 @@ export const IpodStateProvider = (props) => {
             flipCardSelected,
             setFlipCardSelected,
             player,
-            setPlayer
+            setPlayer,
+            setZindex,
+            loadPlaylist,
+            setLoadPlaylist
         }}>
             {props.children}
         </IpodStateContext.Provider>

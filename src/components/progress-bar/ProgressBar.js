@@ -6,18 +6,26 @@ import classes from './ProgressBar.module.css';
 const ProgressBar = (props) => {
 
     const { duration } = props;
-    const { player } = useContext(IpodStateContext);
+    const { player, toggleCoverflow } = useContext(IpodStateContext);
     const [currentTime, setCurrentTime] = useState(0);
     const [intervalId, setIntervalId] = useState(0);
 
     useEffect(() => {
         if (player.state === window.YT.PlayerState.PLAYING) {
-            const interval = setInterval(() => setCurrentTime(player.obj.getCurrentTime()), 1000);
+
+            const interval = setInterval(() => {
+                setCurrentTime(player.obj.getCurrentTime()); console.log("HIII");
+            }, 1000);
+            console.log(intervalId, interval)
             setIntervalId(interval);
         } else {
             clearInterval(intervalId)
         };
+        
     }, [player.state]);
+
+    //clean up timer on unmount
+    useEffect(() => clearInterval(intervalId), [toggleCoverflow]);
 
     const percentageCompleted = ((currentTime / duration) * 100);
     const formatTime = (time) => new Date(time * 1000).toISOString().substr(15, 4);

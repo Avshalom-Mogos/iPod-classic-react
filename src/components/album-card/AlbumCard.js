@@ -15,10 +15,6 @@ const AlbumCard = (props) => {
             sctrollToView(elementsRef.current[flipCardSelected].current)
         }
         // console.log(elementsRef);
-
-
-
-
     })
 
     const flip = () => {

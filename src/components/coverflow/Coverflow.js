@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import TopBar from "../top-bar/TopBar";
 import AlbumCard from '../album-card/AlbumCard';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
@@ -7,11 +7,23 @@ import classes from './Coverflow.module.css';
 
 const Coverflow = () => {
 
-    const { coverflowSelectedIndex, albums } = useContext(IpodStateContext);
+    const {
+        ipodState,
+        coverflowSelectedIndex,
+        albums,
+        setZindex,
+        setLoadPlaylist
+    } = useContext(IpodStateContext);
+
 
     const ROTATION = 75;
     const BASE_ZINDEX = 10;
     const MAX_ZINDEX = 42;
+
+    useEffect(() => {
+        setLoadPlaylist(true);
+    }, [ipodState]);
+
 
     const styles = (index) => {
 
@@ -50,7 +62,7 @@ const Coverflow = () => {
     };
 
     return (
-        <div className={classes.Coverflow}>
+        <div className={classes.Coverflow} style={{ zIndex: setZindex('coverflow') }}>
             <TopBar title='Cover Flow' />
             <div className={classes.container}>
                 <div className={classes.items}>
@@ -68,8 +80,9 @@ const Coverflow = () => {
                         )
                     })}
                 </div>
-                <div className={classes.albumName}>
+                <div className={classes.albumInfo}>
                     <span>{albums[coverflowSelectedIndex].name}</span>
+                    <span>{albums[coverflowSelectedIndex].artist}</span>
                 </div>
             </div>
         </div>

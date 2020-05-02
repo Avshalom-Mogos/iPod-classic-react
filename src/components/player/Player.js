@@ -11,18 +11,23 @@ const Player = () => {
         coverflowSelectedIndex,
         albums,
         flipCardSelected,
-        player
+        player,
+        loadPlaylist
     } = useContext(IpodStateContext);
+
 
     const currentAlbum = albums[coverflowSelectedIndex];
     const currentSong = currentAlbum.items[flipCardSelected];
 
     useEffect(() => {
-        //load playlist
-        player.obj.cuePlaylist({
-            listType: 'playlist',
-            list: currentAlbum.id,
-        });
+        //show components
+        if (loadPlaylist) {
+            //load playlist
+            player.obj.cuePlaylist({
+                listType: 'playlist',
+                list: currentAlbum.id,
+            });
+        };
     }, [currentAlbum.id, player.obj]);
 
 
