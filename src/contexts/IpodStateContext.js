@@ -12,6 +12,8 @@ export const IpodStateProvider = (props) => {
     const [toggleMenu, setToggleMenu] = useState(false);
     const [toggleCoverflow, setToggleCoverflow] = useState(true);
     const [togglePlayer, setTogglePlayer] = useState(false);
+    const [toggleProgressBar, setToggleProgressBar] = useState(true);
+    const [toggleVolumeBar, setToggleVolumeBar] = useState(false);
 
     //set zindex 
     const setZindex = (stateName) => {
@@ -20,7 +22,7 @@ export const IpodStateProvider = (props) => {
     };
 
     //selected
-    const initialSelected = Math.floor(albums.length/2);
+    const initialSelected = Math.floor(albums.length / 2);
     const [coverflowSelectedIndex, setCoverflowSelectedIndex] = useState(2 || initialSelected); //change this later
     const [menuSelected, setMenuSelected] = useState(0);
     const [flipCard, setFlipCard] = useState(false);
@@ -33,6 +35,7 @@ export const IpodStateProvider = (props) => {
     };
     const [player, setPlayer] = useState(initialPlayer);
     const [loadPlaylist, setLoadPlaylist] = useState(false);
+    const [volumeLevel, setVolumeLevel] = useState(100);
 
 
     return (
@@ -63,7 +66,13 @@ export const IpodStateProvider = (props) => {
             setPlayer,
             setZindex,
             loadPlaylist,
-            setLoadPlaylist
+            setLoadPlaylist,
+            volumeLevel,
+            setVolumeLevel,
+            toggleProgressBar,
+            setToggleProgressBar,
+            toggleVolumeBar,
+            setToggleVolumeBar
         }}>
             {props.children}
         </IpodStateContext.Provider>

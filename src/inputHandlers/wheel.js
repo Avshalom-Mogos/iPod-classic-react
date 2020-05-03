@@ -29,7 +29,11 @@ export const handleMove = (e, context) => {
         albums,
         flipCard,
         flipCardSelected,
-        setFlipCardSelected
+        setFlipCardSelected,
+        player,
+        setVolumeLevel,
+        toggleVolumeBar,
+        setToggleVolumeBar
     } = context;
 
 
@@ -82,7 +86,11 @@ export const handleMove = (e, context) => {
                     setCoverflowSelectedIndex(coverflowSelectedIndex + 1)
                 } else if (ipodState === 'coverflow' && flipCardSelected < albums[coverflowSelectedIndex].items.length - 1 && flipCard) {
                     setFlipCardSelected(flipCardSelected + 1)
-                }
+                } else if (ipodState === 'player') {
+                    setToggleVolumeBar(true);
+                    player.obj.setVolume(player.obj.getVolume() + 1);
+                    setVolumeLevel(player.obj.getVolume());
+                };
             };
             return
         };
@@ -101,7 +109,11 @@ export const handleMove = (e, context) => {
                     setCoverflowSelectedIndex(coverflowSelectedIndex + -1)
                 } else if (ipodState === 'coverflow' && flipCardSelected > 0 && flipCard) {
                     setFlipCardSelected(flipCardSelected - 1);
-                }
+                } else if (ipodState === 'player') {
+                    setToggleVolumeBar(true);
+                    player.obj.setVolume(player.obj.getVolume() - 1);
+                    setVolumeLevel(player.obj.getVolume());
+                };
             };
             return
         };

@@ -5,10 +5,11 @@ import classes from './ProgressBar.module.css';
 
 const ProgressBar = (props) => {
 
-    const { duration } = props;
-    const { player, toggleCoverflow } = useContext(IpodStateContext);
+    const { duration} = props;
+    const { player, toggleCoverflow,toggleVolumeBar } = useContext(IpodStateContext);
     const [currentTime, setCurrentTime] = useState(0);
     const [intervalId, setIntervalId] = useState(0);
+
 
     useEffect(() => {
         if (player.state === window.YT.PlayerState.PLAYING) {
@@ -21,7 +22,7 @@ const ProgressBar = (props) => {
         } else {
             clearInterval(intervalId)
         };
-        
+
     }, [player.state]);
 
     //clean up timer on unmount
@@ -30,8 +31,13 @@ const ProgressBar = (props) => {
     const percentageCompleted = ((currentTime / duration) * 100);
     const formatTime = (time) => new Date(time * 1000).toISOString().substr(15, 4);
 
+    const slide = toggleVolumeBar ? { transform: 'translateX(-100%)' } : {};
+
+    console.log();
+    
+
     return (
-        <div className={classes.progressBarContainer}>
+        <div className={classes.progressBarContainer} style={slide}>
             <div className={classes.currentTime}>
                 <p>{formatTime(currentTime)}</p>
             </div>

@@ -8,7 +8,9 @@ const handleMenuClick = (context) => {
         setFlipCard,
         setTogglePlayer,
         setToggleCoverflow,
-        setToggleMenu
+        setToggleMenu,
+        toggleVolumeBar,
+        setToggleVolumeBar
     } = context;
 
     switch (ipodState) {
@@ -24,6 +26,12 @@ const handleMenuClick = (context) => {
             break;
 
         case 'player':
+
+            if(toggleVolumeBar){
+                setToggleVolumeBar(!toggleVolumeBar);
+                break;
+            };
+
             setFlipCard(false);
             setIpodState('coverflow');
             updateState(setTogglePlayer, setToggleCoverflow);

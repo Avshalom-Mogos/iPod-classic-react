@@ -14,6 +14,16 @@ const Coverflow = () => {
         setZindex,
         setLoadPlaylist
     } = useContext(IpodStateContext);
+    // 
+
+
+const height = document.querySelector('body').offsetHeight;
+const Width = document.querySelector('body').offsetWidth;
+
+
+
+
+    // 
 
 
     const ROTATION = 75;

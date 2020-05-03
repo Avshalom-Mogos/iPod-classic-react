@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import TopBar from '../top-bar/TopBar';
 import ProgressBar from '../progress-bar/ProgressBar';
+import VolumeBar from '../volume-bar/VolumeBar'
 import { IpodStateContext } from '../../contexts/IpodStateContext';
 import classes from './Player.module.css';
 
@@ -12,7 +13,9 @@ const Player = () => {
         albums,
         flipCardSelected,
         player,
-        loadPlaylist
+        loadPlaylist,
+        toggleProgressBar,
+        toggleVolumeBar
     } = useContext(IpodStateContext);
 
 
@@ -36,7 +39,7 @@ const Player = () => {
             <TopBar title='Now Playing' />
             <div className={classes.container}>
                 <div className={classes.songInfoContainer}>
-                    <img src={currentAlbum.cover} alt="albumCover" />
+                    <img src={currentAlbum.cover}  id='someid' alt="albumCover" />
                     <div className={classes.songInfo}>
                         <p className={classes.songInfoTitle}>{currentSong.title}</p>
                         <p className={classes.songInfoArtist}>{currentAlbum.artist}</p>
@@ -44,6 +47,7 @@ const Player = () => {
                         <p className={classes.songInfoIndex}>{`${flipCardSelected + 1} of ${currentAlbum.items.length}`}</p>
                     </div>
                     <ProgressBar duration={currentSong.duration} />
+                    <VolumeBar />
                 </div>
             </div>
         </div>
