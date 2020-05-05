@@ -28,7 +28,7 @@ const YoutubeLoader = () => {
         if (e.data === window.YT.PlayerState.PLAYING) {
             const currentsongIndex = e.target.getPlaylistIndex();
             setFlipCardSelected(currentsongIndex)
-            console.log("currentsongIndex", currentsongIndex);
+            console.log("currentsongIndex: ", currentsongIndex);
         };
     };
 

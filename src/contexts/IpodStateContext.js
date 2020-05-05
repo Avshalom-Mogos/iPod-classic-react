@@ -23,7 +23,7 @@ export const IpodStateProvider = (props) => {
 
     //selected
     const initialSelected = Math.floor(albums.length / 2);
-    const [coverflowSelectedIndex, setCoverflowSelectedIndex] = useState(2 || initialSelected); //change this later
+    const [coverflowSelectedIndex, setCoverflowSelectedIndex] = useState(initialSelected); //change this later
     const [menuSelected, setMenuSelected] = useState(0);
     const [flipCard, setFlipCard] = useState(false);
     const [flipCardSelected, setFlipCardSelected] = useState(0);
