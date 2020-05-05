@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 import { handleDown, StopPanMode, handleMove } from '../../inputHandlers/wheel';
+import { handleForwardBackwardUp, handleForwardBackwardDown, stopHoldState } from '../../inputHandlers/forwardBackward';
 import handleOkClick from '../../inputHandlers/ok';
 import handleMenuClick from '../../inputHandlers/menu';
-
-import { handleForwardBackwardUp, handleForwardBackwardDown, stopHoldState } from '../../inputHandlers/forwardBackward';
-
 import handlePlayPauseClick from '../../inputHandlers/playPause';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
 import classes from './IpodButtons.module.css';
