@@ -1,6 +1,6 @@
 const panMode = {
     active: false,
-    speed: 15,
+    speed: 20,
     direction: '',
     prevPosition: { x: 0, y: 0 }
 };
@@ -32,7 +32,6 @@ export const handleMove = (e, context) => {
         setFlipCardSelected,
         player,
         setVolumeLevel,
-        toggleVolumeBar,
         setToggleVolumeBar
     } = context;
 
@@ -88,7 +87,7 @@ export const handleMove = (e, context) => {
                     setFlipCardSelected(flipCardSelected + 1)
                 } else if (ipodState === 'player') {
                     setToggleVolumeBar(true);
-                    player.obj.setVolume(player.obj.getVolume() + 1);
+                    player.obj.setVolume(player.obj.getVolume() + 5);
                     setVolumeLevel(player.obj.getVolume());
                 };
             };
@@ -111,7 +110,7 @@ export const handleMove = (e, context) => {
                     setFlipCardSelected(flipCardSelected - 1);
                 } else if (ipodState === 'player') {
                     setToggleVolumeBar(true);
-                    player.obj.setVolume(player.obj.getVolume() - 1);
+                    player.obj.setVolume(player.obj.getVolume() - 5);
                     setVolumeLevel(player.obj.getVolume());
                 };
             };

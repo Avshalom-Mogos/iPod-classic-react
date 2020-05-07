@@ -5,6 +5,9 @@ import { IpodStateContext } from '../../contexts/IpodStateContext';
 
 const AlbumCard = (props) => {
 
+    console.log("AlbumCard RENDER");
+
+
     const { name, artist, items, thumbnail, index, styles } = props;
     let { coverflowSelectedIndex, flipCard, flipCardSelected } = useContext(IpodStateContext);
 
@@ -13,8 +16,7 @@ const AlbumCard = (props) => {
         if (index === coverflowSelectedIndex && flipCard) {
 
             sctrollToView(elementsRef.current[flipCardSelected].current)
-        }
-        // console.log(elementsRef);
+        };
     })
 
     const flip = () => {
@@ -29,20 +31,15 @@ const AlbumCard = (props) => {
     const sctrollToView = (element) => {
         const scrollIntoViewOptions = { behavior: 'smooth', block: "nearest" };
         element.scrollIntoView(scrollIntoViewOptions);
-    }
-
+    };
 
     const elementsRef = useRef(items.map(() => createRef()));
-
-    window.elementsRef = elementsRef;
-
-
 
     return (
         <div className={classes.AlbumCard} style={styles}>
             <div className={classes.inner} style={flip()}>
                 <div className={classes.front}>
-                    <img src={thumbnail} alt="album img" />
+                    <img src={thumbnail} alt="albumImg" />
                 </div>
                 <div className={classes.back}>
                     <div className={classes.albumInfo}>

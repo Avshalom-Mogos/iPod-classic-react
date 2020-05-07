@@ -4,6 +4,12 @@ import classes from './ScreenSaver.module.css';
 
 
 const ScreenSaver = () => {
+
+
+console.log('ScreenSaver RENDER');
+
+
+
     const { isOn } = useContext(IpodStateContext);
     const onOff = isOn ? classes.on : classes.off;
     return (

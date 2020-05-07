@@ -1,7 +1,7 @@
 1. fix bug when screen shrink when console/keybord is open.
-2. fix ok btn style. ---> DONE
+2. fix ok btn style. ---> DONE.
 3. fix bug on daft punk - too long (song duration is messed up).
-4. fix bug on player cover art reflection
+4. fix bug on player cover art reflection.
 5. add more albums.
 6. formt Names / add albums with audio only.
-7. add silde in animation according to page order
+7. add silde in animation according to page order.

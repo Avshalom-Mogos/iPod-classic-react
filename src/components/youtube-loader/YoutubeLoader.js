@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import YouTube from 'react-youtube';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
+import { PlayerContext } from '../../contexts/PlayerContext';
 import './YoutubeLoader.module.css';
 
 
 const YoutubeLoader = () => {
+
+    console.log('YoutubeLoader RENDER');
+
 
     //might remove later
     const opts = {
@@ -14,21 +18,24 @@ const YoutubeLoader = () => {
         playerVars: {}
     };
 
-    const { player, setPlayer, flipCardSelected ,setFlipCardSelected} = useContext(IpodStateContext);
+    const { player, setPlayer, volumeLevel } = useContext(IpodStateContext);
+    const { album, setSong, songIndex, setSongIndex } = useContext(PlayerContext);
+
     const onReady = (e) => setPlayer({ ...player, obj: e.target });
 
     const onStateChange = (e) => {
         setPlayer({ ...player, state: e.data });
-        // console.log(e.data);
 
         if (e.data === window.YT.PlayerState.CUED) {
-            e.target.playVideoAt(flipCardSelected);
+            e.target.playVideoAt(songIndex);
         };
 
         if (e.data === window.YT.PlayerState.PLAYING) {
+            //update song details on the player 
             const currentsongIndex = e.target.getPlaylistIndex();
-            setFlipCardSelected(currentsongIndex)
-            console.log("currentsongIndex: ", currentsongIndex);
+            setSong(album.items[currentsongIndex]);
+            setSongIndex(currentsongIndex);
+            player.obj.setVolume(volumeLevel);
         };
     };
 

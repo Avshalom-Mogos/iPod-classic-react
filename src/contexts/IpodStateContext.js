@@ -1,8 +1,15 @@
 import React, { createContext, useState } from 'react';
 import data from './data';
 
+
+console.log('Context File');
+
+
 export const IpodStateContext = createContext();
 export const IpodStateProvider = (props) => {
+
+    console.log('Context Provider def'.toUpperCase());
+
     const [ipodState, setIpodState] = useState('coverflow');
     const [isOn, setIsOn] = useState(false);
     const [albums, setAlbums] = useState(data);
@@ -35,7 +42,7 @@ export const IpodStateProvider = (props) => {
     };
     const [player, setPlayer] = useState(initialPlayer);
     const [loadPlaylist, setLoadPlaylist] = useState(false);
-    const [volumeLevel, setVolumeLevel] = useState(100);
+    const [volumeLevel, setVolumeLevel] = useState(50);
 
 
     return (

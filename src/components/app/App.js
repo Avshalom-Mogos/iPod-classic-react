@@ -4,6 +4,8 @@ import classes from './App.module.css';
 
 
 const App = () => {
+  console.log('App RENDER');
+  
   return (
     <div className={classes.App}>
       <Ipod />

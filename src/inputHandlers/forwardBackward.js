@@ -6,9 +6,12 @@ const holdState = {
 
 export const handleForwardBackwardDown = (context, action) => {
 
-    const { ipodState, player } = context;
+    const { ipodState, player, toggleVolumeBar } = context;
 
-    if (ipodState === 'player') {
+    if (ipodState === 'player' && !toggleVolumeBar) {
+
+        console.error(toggleVolumeBar);
+        
 
         //check for hold state
         const interval = setInterval(() => {

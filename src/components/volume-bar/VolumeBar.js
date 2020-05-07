@@ -5,6 +5,10 @@ import classes from './VolumeBar.module.css';
 
 const VolumeBar = () => {
 
+
+    console.log('VolumeBar RENDER');
+    
+
     const { volumeLevel, toggleVolumeBar } = useContext(IpodStateContext);
 
     const slide = toggleVolumeBar ? { transform: 'translateX(-100%)' } : {};

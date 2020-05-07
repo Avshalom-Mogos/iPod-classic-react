@@ -4,6 +4,11 @@ import classes from './TopBar.module.css';
 
 
 const TopBar = (props) => {
+
+console.log('TopBar RENDER');
+
+
+
     const { title } = props;
     const { player } = useContext(IpodStateContext);
     const setIcon = () => {

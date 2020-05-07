@@ -8,8 +8,8 @@
 .wheel{
     /* background-color: white;  OLD*/
     background-color: rgb(33, 46, 56);  
-    width:220px;
-    height: 220px;
+    width: 235px;
+    height: 235px;
     margin: auto auto;
     border-radius: 50%;
     /* border: 0.01cm  outset gray;  */

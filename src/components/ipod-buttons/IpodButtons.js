@@ -6,11 +6,13 @@ import handleMenuClick from '../../inputHandlers/menu';
 import handlePlayPauseClick from '../../inputHandlers/playPause';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
 import classes from './IpodButtons.module.css';
+import { PlayerContext } from '../../contexts/PlayerContext';
 
 
 const IpodButtons = () => {
 
     const context = useContext(IpodStateContext);
+    const playerContext = useContext(PlayerContext);
 
     return (
         <div className={classes.IpodButtons}>
@@ -29,7 +31,6 @@ const IpodButtons = () => {
                 onTouchMove={(e) => handleMove(e, context)}
             >
 
-
                 <button
                     className={classes.menu}
                     onClick={() => handleMenuClick(context)}
@@ -47,7 +48,7 @@ const IpodButtons = () => {
 
                 <div
                     className={classes.ok}
-                    onClick={() => handleOkClick(context)}
+                    onClick={() => handleOkClick(context, playerContext)}
                 >
                 </div>
 

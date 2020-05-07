@@ -5,6 +5,11 @@ import classes from './Menu.module.css';
 
 
 const Menu = () => {
+
+
+console.log('MENU RENDER');
+
+
     const { menuSelected, albums, setZindex } = useContext(IpodStateContext);
     const [url, setUrl] = useState('');
 

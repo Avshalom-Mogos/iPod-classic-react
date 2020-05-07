@@ -1,7 +1,6 @@
 .volumeBarContainer{
     width: 100%;
     height: 8%;
-    font-weight: 900;
     display: flex;
     justify-content: space-evenly; 
 

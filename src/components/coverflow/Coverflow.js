@@ -7,6 +7,8 @@ import classes from './Coverflow.module.css';
 
 const Coverflow = () => {
 
+    console.log("Coverflow RENDER".toUpperCase());
+    
     const {
         ipodState,
         coverflowSelectedIndex,
@@ -14,18 +16,8 @@ const Coverflow = () => {
         setZindex,
         setLoadPlaylist
     } = useContext(IpodStateContext);
-    // 
-
-
-const height = document.querySelector('body').offsetHeight;
-const Width = document.querySelector('body').offsetWidth;
-
-
-
-
-    // 
-
-
+  
+    
     const ROTATION = 75;
     const BASE_ZINDEX = 10;
     const MAX_ZINDEX = 42;

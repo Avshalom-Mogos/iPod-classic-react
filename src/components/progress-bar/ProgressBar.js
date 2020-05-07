@@ -4,6 +4,8 @@ import classes from './ProgressBar.module.css';
 
 
 const ProgressBar = (props) => {
+console.log('ProgressBar RENDER');
+
 
     const { duration} = props;
     const { player, toggleCoverflow,toggleVolumeBar } = useContext(IpodStateContext);
@@ -33,8 +35,6 @@ const ProgressBar = (props) => {
 
     const slide = toggleVolumeBar ? { transform: 'translateX(-100%)' } : {};
 
-    console.log();
-    
 
     return (
         <div className={classes.progressBarContainer} style={slide}>

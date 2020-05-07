@@ -1,7 +1,6 @@
 .progressBarContainer{
     width: 100%;
     height: 8%;
-    font-weight: 900;
     display: flex;
     justify-content: space-around; 
 
@@ -13,6 +12,7 @@
 
 .currentTime, .endTime{
     font-size: 15px;
+    font-weight: 700;
     text-align: center;
     display: flex;
     align-items: center;
