@@ -1,23 +1,34 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, memo } from 'react';
 import TopBar from '../top-bar/TopBar';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
+import { PlayerContext } from "../../contexts/PlayerContext";
 import classes from './Menu.module.css';
 
 
 const Menu = () => {
 
-
-console.log('MENU RENDER');
-
-
-    const { menuSelected, albums, setZindex } = useContext(IpodStateContext);
+    const { menuSelected, albums, setZindex, setLoadPlaylist } = useContext(IpodStateContext);
+    const { album } = useContext(PlayerContext);
     const [url, setUrl] = useState('');
 
+    const setDisabled = !album.items ? { opacity: '0.5' } : {};
+
     useEffect(() => {
+
+        //show coming soon image
+        if (menuSelected > 1) {
+            const comingSoonImg = 'https://www.traducta.fr/wp-content/uploads/2015/10/coming-soon-logo_okok.jpg';
+            setUrl(comingSoonImg);
+            return
+        };
+
+        //show random album cover
         const randIndex = Math.floor(Math.random() * albums.length);
         const url = albums[randIndex].cover;
         setUrl(url);
-    }, [albums])
+        setLoadPlaylist(false)
+
+    }, [albums, setLoadPlaylist, menuSelected])
 
     return (
         <div className={classes.Menu} style={{ zIndex: setZindex('menu') }}>
@@ -29,7 +40,10 @@ console.log('MENU RENDER');
                             <p>Cover Flow</p>
                             <i className='fas fa-chevron-right'></i>
                         </li>
-                        <li className={menuSelected === 1 ? classes.selected : ''}>
+                        <li 
+                        className={menuSelected === 1 ? classes.selected : ''}
+                        style={setDisabled}
+                        >
                             <p>Now Playing</p>
                             <i className='fas fa-chevron-right'></i>
                         </li>
@@ -48,4 +62,4 @@ console.log('MENU RENDER');
         </div>
     )
 };
-export default Menu;
+export default memo(Menu);

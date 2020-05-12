@@ -17,7 +17,7 @@ const handleOkClick = (context, playerContext) => {
         setLoadPlaylist
     } = context;
 
-    const { setAlbum, setSong, setSongIndex } = playerContext
+    const { setAlbum, setSong, setSongIndex,album } = playerContext
 
 
 
@@ -33,7 +33,8 @@ const handleOkClick = (context, playerContext) => {
             setToggleCoverflow,
             setTogglePlayer,
             menuSelected,
-            setLoadPlaylist
+            setLoadPlaylist,
+            album
         });
 
     } else if (ipodState === 'coverflow') {
@@ -45,11 +46,14 @@ const handleOkClick = (context, playerContext) => {
             setSong(albums[coverflowSelectedIndex].items[flipCardSelected]);
             setSongIndex(flipCardSelected);
 
+            //enable playlist load
+            setLoadPlaylist(true);
+
             //change state to player
             setIpodState('player');
             updateState(setToggleCoverflow, setTogglePlayer);
         } else {
-            // setFlipCardSelected(0);
+         
             setFlipCard(!flipCard);
         };
     }
@@ -66,16 +70,12 @@ const updateState = (prevState, newState) => {
 
 const handleMenuState = (props) => {
 
-    console.log(props);
-
-
     if (props.menuSelected === 0) {
 
         props.setIpodState('coverflow');
         updateState(props.setToggleMenu, props.setToggleCoverflow);
-    } else if (props.menuSelected === 1) {
-        
-        props.setLoadPlaylist(false);
+    } else if (props.menuSelected === 1 && props.album.items) {
+
         props.setIpodState('player');
         updateState(props.setToggleMenu, props.setTogglePlayer);
     };

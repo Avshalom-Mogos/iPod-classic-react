@@ -4,37 +4,39 @@ import classes from './ProgressBar.module.css';
 
 
 const ProgressBar = (props) => {
-console.log('ProgressBar RENDER');
 
-
-    const { duration} = props;
-    const { player, toggleCoverflow,toggleVolumeBar } = useContext(IpodStateContext);
+    const { duration } = props;
+    const { player, toggleCoverflow, toggleVolumeBar } = useContext(IpodStateContext);
     const [currentTime, setCurrentTime] = useState(0);
     const [intervalId, setIntervalId] = useState(0);
 
-
     useEffect(() => {
-        if (player.state === window.YT.PlayerState.PLAYING) {
+        if (player.state === window.YT.PlayerState.PLAYING && !intervalId) {
 
-            const interval = setInterval(() => {
-                setCurrentTime(player.obj.getCurrentTime()); console.log("HIII");
-            }, 1000);
-            console.log(intervalId, interval)
+            const interval = setInterval(() => setCurrentTime(player.obj.getCurrentTime()), 1000);
             setIntervalId(interval);
+            
         } else {
+            setIntervalId(0);
             clearInterval(intervalId)
         };
 
-    }, [player.state]);
+    }, [player.state, player.obj]);
 
     //clean up timer on unmount
     useEffect(() => clearInterval(intervalId), [toggleCoverflow]);
 
     const percentageCompleted = ((currentTime / duration) * 100);
-    const formatTime = (time) => new Date(time * 1000).toISOString().substr(15, 4);
+
+    const formatTime = time => {
+        // if song duration is over 10min show 5 char string
+        return time >= 600 ?
+            new Date(time * 1000).toISOString().substr(14, 5)
+            :
+            new Date(time * 1000).toISOString().substr(15, 4)
+    };
 
     const slide = toggleVolumeBar ? { transform: 'translateX(-100%)' } : {};
-
 
     return (
         <div className={classes.progressBarContainer} style={slide}>

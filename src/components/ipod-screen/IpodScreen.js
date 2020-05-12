@@ -8,9 +8,7 @@ import classes from './IpodScreen.module.css';
 
 
 const IpodScreen = () => {
-console.log('IpodScreen RENDER');
-
-
+    
     const {
         toggleScreenSaver,
         toggleMenu,

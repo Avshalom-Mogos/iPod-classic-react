@@ -1,6 +1,5 @@
 const handleMenuClick = (context) => {
 
-    console.log(context);
     const {
         ipodState,
         setIpodState,

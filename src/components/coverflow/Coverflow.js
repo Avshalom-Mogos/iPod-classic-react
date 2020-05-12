@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, memo } from 'react';
 import TopBar from "../top-bar/TopBar";
 import AlbumCard from '../album-card/AlbumCard';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
@@ -7,33 +7,37 @@ import classes from './Coverflow.module.css';
 
 const Coverflow = () => {
 
-    console.log("Coverflow RENDER".toUpperCase());
-    
     const {
         ipodState,
         coverflowSelectedIndex,
         albums,
         setZindex,
-        setLoadPlaylist
+        setFlipCardSelected
     } = useContext(IpodStateContext);
-  
-    
+
     const ROTATION = 75;
     const BASE_ZINDEX = 10;
     const MAX_ZINDEX = 42;
+    const WIDTH = 65;
+    const WIDTH_AFTER_ROTATION = 23;
 
     useEffect(() => {
-        setLoadPlaylist(true);
-    }, [ipodState]);
+        setFlipCardSelected(0)
+
+    }, [ipodState, coverflowSelectedIndex, setFlipCardSelected]);
 
 
-    const styles = (index) => {
+    const styles = index => {
 
-        //left side of selected
-        if (index < coverflowSelectedIndex) {
-            let calcSpaceBetween = index + 1 === coverflowSelectedIndex
-                ? (65)
-                : (65 + (23 * (coverflowSelectedIndex - (index + 1))));
+        const leftOfSelected = index < coverflowSelectedIndex;
+        const selected = index === coverflowSelectedIndex;
+        const rightOfSelected = index > coverflowSelectedIndex;
+
+
+        if (leftOfSelected) {
+            const  calcSpaceBetween = index + 1 === coverflowSelectedIndex
+                ? (WIDTH)
+                : (WIDTH + (WIDTH_AFTER_ROTATION * (coverflowSelectedIndex - (index + 1))));
 
             return {
                 transform: `translateX(-${calcSpaceBetween}%) rotateY(${ROTATION}deg)`,
@@ -41,8 +45,7 @@ const Coverflow = () => {
             }
         };
 
-        //selected
-        if (index === coverflowSelectedIndex) {
+        if (selected) {
 
             return {
                 transform: 'rotateY(0deg)',
@@ -50,11 +53,10 @@ const Coverflow = () => {
             }
         };
 
-        // right of selected
-        if (index > coverflowSelectedIndex) {
-            let calcSpaceBetween = index + 1 === coverflowSelectedIndex
-                ? (65)
-                : (65 + (23 * ((index - 1) - coverflowSelectedIndex)));
+        if (rightOfSelected) {
+            const  calcSpaceBetween = index + 1 === coverflowSelectedIndex
+                ? (WIDTH)
+                : (WIDTH + (WIDTH_AFTER_ROTATION * ((index - 1) - coverflowSelectedIndex)));
 
             return {
                 transform: `translateX(${calcSpaceBetween}%) rotateY(-${ROTATION}deg)`,
@@ -90,4 +92,4 @@ const Coverflow = () => {
         </div>
     )
 };
-export default Coverflow;
+export default memo(Coverflow);

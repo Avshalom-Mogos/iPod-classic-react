@@ -10,17 +10,11 @@ export const handleForwardBackwardDown = (context, action) => {
 
     if (ipodState === 'player' && !toggleVolumeBar) {
 
-        console.error(toggleVolumeBar);
-        
-
         //check for hold state
         const interval = setInterval(() => {
             holdState.duration++;
             holdState.active = holdState.duration > 25 ? true : false;
-
-            console.log('HOLD : ', holdState.active);
-            console.log('Hold Duration: ', holdState.duration);
-
+            
             if (holdState.active) actions[action](player.obj);
 
         }, 10);
@@ -52,7 +46,6 @@ export const handleForwardBackwardUp = (context, direction) => {
     } = context;
 
     if (ipodState === 'player') {
-        console.error(holdState.intervalId);
 
         // if hold state active stop it and exit function
         if (holdState.active) {

@@ -7,9 +7,6 @@ import './YoutubeLoader.module.css';
 
 const YoutubeLoader = () => {
 
-    console.log('YoutubeLoader RENDER');
-
-
     //might remove later
     const opts = {
         height: '0',
@@ -19,16 +16,13 @@ const YoutubeLoader = () => {
     };
 
     const { player, setPlayer, volumeLevel } = useContext(IpodStateContext);
-    const { album, setSong, songIndex, setSongIndex } = useContext(PlayerContext);
+    const { album, setSong, setSongIndex } = useContext(PlayerContext);
 
     const onReady = (e) => setPlayer({ ...player, obj: e.target });
 
     const onStateChange = (e) => {
+        
         setPlayer({ ...player, state: e.data });
-
-        if (e.data === window.YT.PlayerState.CUED) {
-            e.target.playVideoAt(songIndex);
-        };
 
         if (e.data === window.YT.PlayerState.PLAYING) {
             //update song details on the player 

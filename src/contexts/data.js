@@ -1,663 +1,1025 @@
 export default [
     {
-        name: 'damn',
-        id: 'OLAK5uy_m-I5TQZ_NLUNCk_fD3dIN5tHIOSbEKt_g',
-        artist: 'Kendrick Lamar',
-        cover: './images/damn.png',
+        id: 'PL9tY0BWXOZFvW6q_ZCdgfcMqzpmvnb_0V',
+        name: 'thank You Next',
+        artist: 'Ariana Grande',
+        cover: './images/thankYouNext.png',
         items: [
             {
-                id: 'jvDZEoEdjzo',
-                title: 'BLOOD.',
-                thumbnail: 'http://img.youtube.com/vi/jvDZEoEdjzo/mqdefault.jpg',
-                duration: 119
-            },
-            {
-                id: 'NLZRYQMLDW4',
-                title: 'DNA.',
-                thumbnail: 'http://img.youtube.com/vi/NLZRYQMLDW4/mqdefault.jpg',
-                duration: 286
-            },
-            {
-                id: 'y-GWhui7obA',
-                title: 'YAH.',
-                thumbnail: 'http://img.youtube.com/vi/y-GWhui7obA/mqdefault.jpg',
-                duration: 161
-            },
-            {
-                id: 'glaG64Ao7sM',
-                title: 'ELEMENT.',
-                thumbnail: 'http://img.youtube.com/vi/glaG64Ao7sM/mqdefault.jpg',
+                id: 'oRcXOnLkM7A',
+                title: 'imagine',
                 duration: 214
             },
             {
-                id: 'LfjmxgjNP2g',
-                title: 'FEEL.',
-                thumbnail: 'http://img.youtube.com/vi/LfjmxgjNP2g/mqdefault.jpg',
-                duration: 215
-            },
-            {
-                id: 'Dlh-dzB2U4Y',
-                title: 'LOYALTY. ft. Rihanna',
-                thumbnail: 'http://img.youtube.com/vi/Dlh-dzB2U4Y/mqdefault.jpg',
-                duration: 240
-            },
-            {
-                id: 'BBT2q7hsQRA',
-                title: 'PRIDE.',
-                thumbnail: 'http://img.youtube.com/vi/BBT2q7hsQRA/mqdefault.jpg',
-                duration: 276
-            },
-            {
-                id: 'tvTRZJ-4EyI',
-                title: 'HUMBLE.',
-                thumbnail: 'http://img.youtube.com/vi/tvTRZJ-4EyI/mqdefault.jpg',
-                duration: 184
-            },
-            {
-                id: 'cA93cs-YReE',
-                title: 'LUST.',
-                thumbnail: 'http://img.youtube.com/vi/cA93cs-YReE/mqdefault.jpg',
-                duration: 308
-            },
-            {
-                id: 'ox7RsX1Ee34',
-                title: 'LOVE. ft. Zacari',
-                thumbnail: 'http://img.youtube.com/vi/ox7RsX1Ee34/mqdefault.jpg',
-                duration: 223
-            },
-            {
-                id: 'jHKnssHObhM',
-                title: 'XXX.',
-                thumbnail: 'http://img.youtube.com/vi/jHKnssHObhM/mqdefault.jpg',
-                duration: 255
-            },
-            {
-                id: 'nIb2-q3TqUU',
-                title: 'FEAR.',
-                thumbnail: 'http://img.youtube.com/vi/nIb2-q3TqUU/mqdefault.jpg',
-                duration: 461
-            },
-            {
-                id: 'ZdBU440FFOg',
-                title: 'GOD.',
-                thumbnail: 'http://img.youtube.com/vi/ZdBU440FFOg/mqdefault.jpg',
-                duration: 249
-            },
-            {
-                id: 'VDhPjmPuD9k',
-                title: 'DUCKWORTH.',
-                thumbnail: 'http://img.youtube.com/vi/VDhPjmPuD9k/mqdefault.jpg',
-                duration: 249
-            }
-        ]
-    },
-    {
-        name: 'sweetner',
-        id: 'PLT5kE8dBKiP7hCAfkVzoi8TmbGbyZKZa8',
-        artist:'Ariana Grande',
-        cover: './images/sweetner.png',
-        items: [
-            {
-                id: '-ZoJSLB2N18',
-                title: 'raindrops (an angel cried)',
-                thumbnail: 'http://img.youtube.com/vi/-ZoJSLB2N18/mqdefault.jpg',
-                duration: 39
-            },
-            {
-                id: 'h5Ne3YcZCVI',
-                title: 'blazed ft. Pharrell Williams',
-                thumbnail: 'http://img.youtube.com/vi/h5Ne3YcZCVI/mqdefault.jpg',
-                duration: 198
-            },
-            {
-                id: 'OQitfe8u7i4',
-                title: 'the light is coming ft. Nicki Minaj',
-                thumbnail: 'http://img.youtube.com/vi/OQitfe8u7i4/mqdefault.jpg',
-                duration: 233
-            },
-            {
-                id: 'AVPEP_KSldA',
-                title: 'R.E.M.',
-                thumbnail: 'http://img.youtube.com/vi/AVPEP_KSldA/mqdefault.jpg',
-                duration: 247
-            },
-            {
-                id: 'kHLHSlExFis',
-                title: 'God is a woman',
-                thumbnail: 'http://img.youtube.com/vi/kHLHSlExFis/mqdefault.jpg',
-                duration: 242
-            },
-            {
-                id: '6vay5SgNPpk',
-                title: 'sweetener',
-                thumbnail: 'http://img.youtube.com/vi/6vay5SgNPpk/mqdefault.jpg',
-                duration: 210
-            },
-            {
-                id: '_IvArrFhcp0',
-                title: 'successful',
-                thumbnail: 'http://img.youtube.com/vi/_IvArrFhcp0/mqdefault.jpg',
-                duration: 229
-            },
-            {
-                id: 'MYvjW3zdCws',
-                title: 'everytime',
-                thumbnail: 'http://img.youtube.com/vi/MYvjW3zdCws/mqdefault.jpg',
-                duration: 174
-            },
-            {
-                id: 'kN0iD0pI3o0',
-                title: 'breathin',
-                thumbnail: 'http://img.youtube.com/vi/kN0iD0pI3o0/mqdefault.jpg',
-                duration: 203
-            },
-            {
-                id: 'ffxKSjUwKdU',
-                title: 'no tears left to cry',
-                thumbnail: 'http://img.youtube.com/vi/ffxKSjUwKdU/mqdefault.jpg',
-                duration: 239
-            },
-            {
-                id: 'F9-SYDu6ZI4',
-                title: 'borderline ft. Missy Elliott',
-                thumbnail: 'http://img.youtube.com/vi/F9-SYDu6ZI4/mqdefault.jpg',
-                duration: 179
-            },
-            {
-                id: '-mNEr0OGusU',
-                title: 'better off',
-                thumbnail: 'http://img.youtube.com/vi/-mNEr0OGusU/mqdefault.jpg',
+                id: 'Km__cJEJ3JI',
+                title: 'needy',
                 duration: 173
             },
             {
-                id: 'sXJ2hajo6rw',
-                title: 'goodnight n go',
-                thumbnail: 'http://img.youtube.com/vi/sXJ2hajo6rw/mqdefault.jpg',
-                duration: 191
+                id: '-_aGvdfLTKY',
+                title: 'NASA',
+                duration: 184
             },
             {
-                id: 'ba8CifMRZ2Y',
-                title: 'pete davidson',
-                thumbnail: 'http://img.youtube.com/vi/ba8CifMRZ2Y/mqdefault.jpg',
-                duration: 75
+                id: 'uKqRAC-JNOM',
+                title: 'bloodline',
+                duration: 218
             },
             {
-                id: 'hXU4P6j3TNY',
-                title: 'get well soon',
-                thumbnail: 'http://img.youtube.com/vi/hXU4P6j3TNY/mqdefault.jpg',
-                duration: 324
+                id: 'XTZigwkcJhw',
+                title: 'fake smile',
+                duration: 210
+            },
+            {
+                id: 'm7XHduHsBvk',
+                title: 'bad idea',
+                duration: 269
+            },
+            {
+                id: 'DOJremEQw88',
+                title: 'make up',
+                duration: 142
+            },
+            {
+                id: 'Z1pmpDRrQhU',
+                title: 'ghostin',
+                duration: 273
+            },
+            {
+                id: '6GcpNvYFMGE',
+                title: 'in my head',
+                duration: 224
+            },
+            {
+                id: 'QYh6mYIJG2Y',
+                title: '7 rings',
+                duration: 185
+            },
+            {
+                id: 'gl1aHhXnN1k',
+                title: 'thank u, next',
+                duration: 331
+            },
+            {
+                id: 'LH4Y1ZUUx2g',
+                title: 'break up with your girlfriend, i\'m bored',
+                duration: 205
             }
         ]
     },
     {
-        name: 'discovery',
         id: 'PLSdoVPM5WnndSQEXRz704yQkKwx76GvPV',
-        artist:'Daft Punk',
+        name: 'discovery',
+        artist: 'Daft Punk',
         cover: './images/discovery.png',
         items: [
             {
                 id: 'A2VpR8HahKc',
                 title: 'One more time',
-                thumbnail: 'http://img.youtube.com/vi/A2VpR8HahKc/mqdefault.jpg',
                 duration: 321
             },
             {
                 id: 'Mjpu0-o9iek',
                 title: 'Aerodynamic',
-                thumbnail: 'http://img.youtube.com/vi/Mjpu0-o9iek/mqdefault.jpg',
                 duration: 213
             },
             {
                 id: '4whD6uAryMs',
                 title: 'Digital Love',
-                thumbnail: 'http://img.youtube.com/vi/4whD6uAryMs/mqdefault.jpg',
                 duration: 302
             },
             {
                 id: 'yydNF8tuVmU',
                 title: 'Harder, Better, Faster, Stronger',
-                thumbnail: 'http://img.youtube.com/vi/yydNF8tuVmU/mqdefault.jpg',
                 duration: 227
             },
             {
                 id: 'oor2uIqys8M',
                 title: 'Crescendolls',
-                thumbnail: 'http://img.youtube.com/vi/oor2uIqys8M/mqdefault.jpg',
                 duration: 212
             },
             {
                 id: 'NQ-mm1H7uJw',
                 title: 'Nightvision',
-                thumbnail: 'http://img.youtube.com/vi/NQ-mm1H7uJw/mqdefault.jpg',
                 duration: 105
             },
             {
                 id: 'UBGfS7S9BYg',
                 title: 'Superheroes',
-                thumbnail: 'http://img.youtube.com/vi/UBGfS7S9BYg/mqdefault.jpg',
                 duration: 238
             },
             {
                 id: 'KlUtJOTmmk8',
                 title: 'High Life',
-                thumbnail: 'http://img.youtube.com/vi/KlUtJOTmmk8/mqdefault.jpg',
                 duration: 202
             },
             {
                 id: 'em0MknB6wFo',
                 title: 'Something About Us',
-                thumbnail: 'http://img.youtube.com/vi/em0MknB6wFo/mqdefault.jpg',
                 duration: 233
             },
             {
                 id: 'INbgG9M0WYE',
                 title: 'Voyager',
-                thumbnail: 'http://img.youtube.com/vi/INbgG9M0WYE/mqdefault.jpg',
                 duration: 228
             },
             {
                 id: 'TCd6PfxOy0Y',
                 title: 'Veridis Quo',
-                thumbnail: 'http://img.youtube.com/vi/TCd6PfxOy0Y/mqdefault.jpg',
                 duration: 346
             },
             {
                 id: '9hhVnRTNVmM',
                 title: 'Short Circuit',
-                thumbnail: 'http://img.youtube.com/vi/9hhVnRTNVmM/mqdefault.jpg',
                 duration: 207
             },
             {
                 id: 'UKYWWfR_GKA',
                 title: 'Face to Face',
-                thumbnail: 'http://img.youtube.com/vi/UKYWWfR_GKA/mqdefault.jpg',
                 duration: 241
             },
             {
                 id: 'ROF4uNjrB4U',
                 title: 'Too Long',
-                thumbnail: 'http://img.youtube.com/vi/ROF4uNjrB4U/mqdefault.jpg',
                 duration: 601
             }
         ]
     },
     {
+        id: 'PLSA552_AAwVe1EDE_IkIseryGr3K7Ik3S',
         name: 'whenWeAllFallAsleepWhereDoWeGo',
-        id: 'OLAK5uy_kQbMBLWm9sUrVNnooayU8ilISrC7KintI',
-        artist:'Billie Eilish',
+        artist: 'Billie Eilish',
         cover: './images/whenWeAllFallAsleepWhereDoWeGo.png',
         items: [
             {
-                id: 'KRntP-q_R9s',
-                title: 'bad guy (Vertical Ver)',
-                thumbnail: 'http://img.youtube.com/vi/KRntP-q_R9s/mqdefault.jpg',
-                duration: 193
+                id: '26v8fWcmRZM',
+                title: '!!!!!!!',
+                duration: 14
             },
             {
-                id: 'DyDfgMOUjCI',
+                id: 'ikLFAHnYZxs',
                 title: 'bad guy',
-                thumbnail: 'http://img.youtube.com/vi/DyDfgMOUjCI/mqdefault.jpg',
-                duration: 206
+                duration: 195
             },
             {
-                id: 'LZyybvVx-js',
+                id: 'OYyyce8K_c0',
                 title: 'xanny',
-                thumbnail: 'http://img.youtube.com/vi/LZyybvVx-js/mqdefault.jpg',
-                duration: 266
+                duration: 244
             },
             {
-                id: 'coLerbRvgsQ',
+                id: 'za8Ki4CCXgg',
                 title: 'you should see me in a crown',
-                thumbnail: 'http://img.youtube.com/vi/coLerbRvgsQ/mqdefault.jpg',
-                duration: 193
+                duration: 182
             },
             {
-                id: '-PZsSWwc9xA',
+                id: 'VkPGmj8dyPU',
                 title: 'all the good girls go to hell',
-                thumbnail: 'http://img.youtube.com/vi/-PZsSWwc9xA/mqdefault.jpg',
-                duration: 222
+                duration: 169
             },
             {
-                id: 'yaJx0Gj_LCY',
+                id: 'pdMoiespbuM',
                 title: 'wish you were gay',
-                thumbnail: 'http://img.youtube.com/vi/yaJx0Gj_LCY/mqdefault.jpg',
                 duration: 222
             },
             {
-                id: 'pbMwTqkKSps',
+                id: 'b6WNdcZpDhQ',
                 title: 'when the party\'s over',
-                thumbnail: 'http://img.youtube.com/vi/pbMwTqkKSps/mqdefault.jpg',
-                duration: 194
+                duration: 196
             },
             {
-                id: 'OZYd9JxithE',
+                id: 'fUXi9ErGNuQ',
                 title: '8',
-                thumbnail: 'http://img.youtube.com/vi/OZYd9JxithE/mqdefault.jpg',
                 duration: 174
             },
             {
-                id: 'k1ATPhkVWi0',
+                id: 'Y2gmTdTh5VM',
                 title: 'my strange addiction',
-                thumbnail: 'http://img.youtube.com/vi/k1ATPhkVWi0/mqdefault.jpg',
                 duration: 180
             },
             {
-                id: 'HUHC9tYz8ik',
+                id: 'Z1r3KDb0Vx0',
                 title: 'bury a friend',
-                thumbnail: 'http://img.youtube.com/vi/HUHC9tYz8ik/mqdefault.jpg',
-                duration: 213
+                duration: 194
             },
             {
-                id: 'lH1F6m3slrQ',
+                id: 'HXeR4ZckAn0',
                 title: 'ilomilo',
-                thumbnail: 'http://img.youtube.com/vi/lH1F6m3slrQ/mqdefault.jpg',
                 duration: 157
             },
             {
-                id: 'P4z1O3miesI',
+                id: 'BHCphTyFzpQ',
                 title: 'listen before i go',
-                thumbnail: 'http://img.youtube.com/vi/P4z1O3miesI/mqdefault.jpg',
                 duration: 243
             },
             {
-                id: 'WiinVuzh4DA',
+                id: 'ld8r8qOuNrM',
                 title: 'i love you',
-                thumbnail: 'http://img.youtube.com/vi/WiinVuzh4DA/mqdefault.jpg',
                 duration: 292
             },
             {
-                id: 'vciZvVJyNYU',
+                id: 'WQiffIU_PtA',
                 title: 'goodbye',
-                thumbnail: 'http://img.youtube.com/vi/vciZvVJyNYU/mqdefault.jpg',
                 duration: 120
             }
         ]
     },
     {
-        name: '25',
+        id: 'PL0Wbig4PvIvNvnSK4g7yTk9-p-11T7Z-B',
+        name: 'DAMN.',
+        artist: 'Kendrick Lamar',
+        cover: './images/damn.png',
+        items: [
+            {
+                id: 'hcnNvy_svTE',
+                title: 'BLOOD.',
+                duration: 119
+            },
+            {
+                id: 'Fb3j_yuFh1s',
+                title: 'DNA.',
+                duration: 186
+            },
+            {
+                id: 'kL9QqLugfLU',
+                title: 'YAH.',
+                duration: 161
+            },
+            {
+                id: 'SwvzXM-EVrQ',
+                title: 'ELEMENT.',
+                duration: 209
+            },
+            {
+                id: 'cQtFTqh1mwM',
+                title: 'FEEL.',
+                duration: 215
+            },
+            {
+                id: 'ZxGMK9Hb6n8',
+                title: 'LOYALTY.',
+                duration: 228
+            },
+            {
+                id: 'J87pJrxvJ5E',
+                title: 'PRIDE.',
+                duration: 276
+            },
+            {
+                id: 'H4RELGc9su8',
+                title: 'HUMBLE.',
+                duration: 177
+            },
+            {
+                id: 'qUx8EwR0Otg',
+                title: 'LUST.',
+                duration: 308
+            },
+            {
+                id: 'XKkV2j9DbIQ',
+                title: 'LOVE.',
+                duration: 214
+            },
+            {
+                id: 'TFr4br_GrSc',
+                title: 'XXX.',
+                duration: 255
+            },
+            {
+                id: 'jdbQYDkNjfk',
+                title: 'FEAR.',
+                duration: 461
+            },
+            {
+                id: 'bBTeAg5CFRA',
+                title: 'GOD.',
+                duration: 249
+            },
+            {
+                id: 'Dm-foWGDBF0',
+                title: 'DUCKWORTH.',
+                duration: 249
+            }
+        ]
+    },
+    {
+        id: 'PLPObKp282vT6islVoFIul55FN1PyYijeA',
+        name: 'The Fame',
+        artist: 'Lady Gaga',
+        cover: './images/theFame.png',
+        items: [
+            {
+                id: 'LDsU-XBUIzY',
+                title: 'Just Dance',
+                duration: 241
+            },
+            {
+                id: 'SvAYberxvzA',
+                title: 'LoveGame',
+                duration: 218
+            },
+            {
+                id: 'I8PhBfAr9mU',
+                title: 'Paparazzi',
+                duration: 213
+            },
+            {
+                id: 'INSvC7uUgLM',
+                title: 'Eh, Eh (Nothing Else I Can Say)',
+                duration: 176
+            },
+            {
+                id: '-h4kkYwj2OM',
+                title: 'Poker Face',
+                duration: 240
+            },
+            {
+                id: 'eUpUlJEaG2Y',
+                title: 'Beautiful, Dirty, Rich',
+                duration: 175
+            },
+            {
+                id: 'd7-a-bWu7O0',
+                title: 'The Fame',
+                duration: 220
+            },
+            {
+                id: 'yM0z2hsRaPg',
+                title: 'Money Honey',
+                duration: 171
+            },
+            {
+                id: 'xIyYp5PgET8',
+                title: ' Starstruck',
+                duration: 220
+            },
+            {
+                id: 'wH_kYLLJ3o4',
+                title: 'Boys Boys Boys',
+                duration: 204
+            },
+            {
+                id: 'fmdrtDHgtp4',
+                title: 'Paper Gangsta',
+                duration: 266
+            },
+            {
+                id: 'YWVMUDvilsQ',
+                title: 'Brown Eyes',
+                duration: 246
+            },
+            {
+                id: 'CwPQSxWVNcA',
+                title: 'I Like It Rough',
+                duration: 205
+            },
+            {
+                id: 'EIw1WOHZS_s',
+                title: 'Summerboy',
+                duration: 256
+            },
+            {
+                id: 'IHQO593DMgc',
+                title: 'Disco Heaven',
+                duration: 222
+            },
+            {
+                id: 'C45wieYvXvk',
+                title: 'Again Again',
+                duration: 187
+            }
+        ]
+    },
+    {
+        id: 'PLI4I12TxwyJQTPcrXEjmNK-j7FQ5q9vmI',
+        name: 'Thriller',
+        artist: 'Michael Jackson',
+        cover: './images/thriller.png',
+        items: [
+            {
+                id: '4Uj3zitETs4',
+                title: 'Wanna Be Startin\' Somethin\'',
+                duration: 364
+            },
+            {
+                id: 'hG9OzYVSg3c',
+                title: 'Baby Be Mine',
+                duration: 261
+            },
+            {
+                id: 'rHp0s2wKajw',
+                title: 'The Girl Is Mine ft. Paul McCartney',
+                duration: 223
+            },
+            {
+                id: 'ZEHsIcsjtdI',
+                title: 'Thriller',
+                duration: 358
+            },
+            {
+                id: 'TA_kyd6A-iw',
+                title: 'Beat It',
+                duration: 260
+            },
+            {
+                id: 'luyUhOlBK-I',
+                title: 'Billie Jean',
+                duration: 295
+            },
+            {
+                id: 'tKAh--ss1r0',
+                title: 'human nature',
+                duration: 246
+            },
+            {
+                id: '5B0itw6rmmI',
+                title: 'P.Y.T. (Pretty Young Thing)',
+                duration: 240
+            },
+            {
+                id: 'Cc_KSe6FUoU',
+                title: 'The Lady In My Life',
+                duration: 299
+            },
+            {
+                id: 'Y3dtODdVG2A',
+                title: 'Carousel',
+                duration: 250
+            }
+        ]
+    },
+    {
+        id: 'PLWeay8hyHjmC6gRFgy4vHmrCCuAi4i0p5',
+        name: 'Back To Black',
+        artist: 'Amy Winehouse',
+        cover: './images/backToBlack.png',
+        items: [
+            {
+                id: 't2TKqJ2FXGM',
+                title: 'Rehab',
+                duration: 214
+            },
+            {
+                id: 'Pr3g9TPPuH4',
+                title: 'You Know I\'m No Good',
+                duration: 257
+            },
+            {
+                id: '8kvb-pJEeEI',
+                title: 'Me & Mr Jones',
+                duration: 152
+            },
+            {
+                id: 'whaDlITyGsU',
+                title: 'Just Friends',
+                duration: 192
+            },
+            {
+                id: 'rbBbQ-jldvQ',
+                title: 'Back To Black',
+                duration: 241
+            },
+            {
+                id: 'NhHsjZZpF7s',
+                title: 'Love Is A Losing Game',
+                duration: 155
+            },
+            {
+                id: 'd1QltB3m0Hs',
+                title: 'Tears Dry On Their Own',
+                duration: 186
+            },
+            {
+                id: 'bS8-qQojlhA',
+                title: 'Wake Up Alone',
+                duration: 222
+            },
+            {
+                id: '4daRkj5OADQ',
+                title: 'Some Unholy War',
+                duration: 142
+            },
+            {
+                id: 'lzKQ9I-2AXY',
+                title: 'He Can Only Hold Her',
+                duration: 165
+            },
+            {
+                id: 'cJITJRgNv9w',
+                title: 'Addicted',
+                duration: 166
+            }
+        ]
+    },
+    {
+        id: 'PLycVTiaj8OI-kwvNjgvvopMJt__x-y5mD',
+        name: 'Abbey Road',
+        artist: 'The Beatles',
+        cover: './images/abbeyRoad.png',
+        items: [
+            {
+                id: 'oolpPmuK2I8',
+                title: 'Come Together',
+                duration: 260
+            },
+            {
+                id: 'VWO3nEuWo4k',
+                title: 'Something',
+                duration: 183
+            },
+            {
+                id: 'mJag19WoAe0',
+                title: 'Maxwell\'s Silver Hammer',
+                duration: 208
+            },
+            {
+                id: '9BznFjbcBVs',
+                title: 'Oh! Darling',
+                duration: 208
+            },
+            {
+                id: 'De1LCQvbqV4',
+                title: 'Octopus\'s Garden',
+                duration: 171
+            },
+            {
+                id: 'tAe2Q_LhY8g',
+                title: 'I Want You (She\'s So Heavy)',
+                duration: 468
+            },
+            {
+                id: 'xUNqsfFUwhY',
+                title: 'Here Comes The Sun',
+                duration: 186
+            },
+            {
+                id: 'hL0tnrl2L_U',
+                title: 'Because',
+                duration: 166
+            },
+            {
+                id: 'BpndGZ71yww',
+                title: 'You Never Give Me Your Money',
+                duration: 243
+            },
+            {
+                id: '6bNMxWGHlTI',
+                title: 'Sun King',
+                duration: 147
+            },
+            {
+                id: 'oMarHac3VpQ',
+                title: 'Mean Mr Mustard',
+                duration: 67
+            },
+            {
+                id: 'Cb0dTdTeHMU',
+                title: 'Polythene Pam',
+                duration: 73
+            },
+            {
+                id: 'NVv7IzEVf3M',
+                title: 'She Came In Through The Bathroom Window',
+                duration: 119
+            },
+            {
+                id: 'AcQjM7gV6mI',
+                title: 'Golden Slumbers',
+                duration: 92
+            },
+            {
+                id: '6B224XDJw6g',
+                title: 'Carry That Weight',
+                duration: 97
+            },
+            {
+                id: '12R4FzIhdoQ',
+                title: 'The End',
+                duration: 142
+            },
+            {
+                id: 'Mh1hKt5kQ_4',
+                title: 'Her Majesty',
+                duration: 27
+            }
+        ]
+    },
+    {
         id: 'OLAK5uy_n4sypMETDMM4TOAwQdqnUdhidpfldIveg',
-        artist:'Adele',
+        name: '25',
+        artist: 'Adele',
         cover: './images/25.png',
         items: [
             {
                 id: 'YQHsXMglC9A',
                 title: 'Hello',
-                thumbnail: 'http://img.youtube.com/vi/YQHsXMglC9A/mqdefault.jpg',
                 duration: 367
             },
             {
                 id: 'fk4BbF7B29w',
                 title: 'Send My Love (To Your New Lover)',
-                thumbnail: 'http://img.youtube.com/vi/fk4BbF7B29w/mqdefault.jpg',
                 duration: 226
             },
             {
                 id: 'z7NEG3SGZ_g',
                 title: 'I Miss You',
-                thumbnail: 'http://img.youtube.com/vi/z7NEG3SGZ_g/mqdefault.jpg',
                 duration: 349
             },
             {
                 id: 'HDpCv71r-0U',
-                title: 'When We Were Young (Live)',
-                thumbnail: 'http://img.youtube.com/vi/HDpCv71r-0U/mqdefault.jpg',
+                title: 'When We Were Young - Live at The BRIT Awards 2016',
                 duration: 284
             },
             {
                 id: '-fsCc7Be1H0',
                 title: 'Remedy',
-                thumbnail: 'http://img.youtube.com/vi/-fsCc7Be1H0/mqdefault.jpg',
                 duration: 246
             },
             {
                 id: 'l8djdhhFuxo',
                 title: 'Water Under The Bridge',
-                thumbnail: 'http://img.youtube.com/vi/l8djdhhFuxo/mqdefault.jpg',
                 duration: 241
             },
             {
                 id: 'Qiu59lZShCo',
                 title: 'River Lea',
-                thumbnail: 'http://img.youtube.com/vi/Qiu59lZShCo/mqdefault.jpg',
                 duration: 226
             },
             {
                 id: '-hzFTJDJGkQ',
                 title: 'Love In The Dark',
-                thumbnail: 'http://img.youtube.com/vi/-hzFTJDJGkQ/mqdefault.jpg',
                 duration: 286
             },
             {
                 id: 'Db9ciJPIaEU',
                 title: 'Million Years Ago',
-                thumbnail: 'http://img.youtube.com/vi/Db9ciJPIaEU/mqdefault.jpg',
                 duration: 228
             },
             {
                 id: 'jb5g4UFHmfQ',
                 title: 'All I Ask',
-                thumbnail: 'http://img.youtube.com/vi/jb5g4UFHmfQ/mqdefault.jpg',
                 duration: 272
             },
             {
                 id: '1kZsaRkVEUY',
                 title: 'Sweetest Devotion',
-                thumbnail: 'http://img.youtube.com/vi/1kZsaRkVEUY/mqdefault.jpg',
                 duration: 252
             }
         ]
     },
     {
-        name: 'BEYONCÉ',
         id: 'OLAK5uy_kGjAOvICgms-KmyUZGF-mUUG880Xh503g',
-        artist:'Beyoncé',
-        cover: './images/Beyoncé.png',
+        name: 'BEYONCÉ',
+        artist: 'Beyoncé',
+        cover: './images/beyoncé.png',
         items: [
             {
                 id: 'LXXQLa-5n5w',
                 title: 'Pretty Hurts',
-                thumbnail: 'http://img.youtube.com/vi/LXXQLa-5n5w/mqdefault.jpg',
                 duration: 425
             },
             {
                 id: 'K4r4lysSgLE',
                 title: 'Haunted',
-                thumbnail: 'http://img.youtube.com/vi/K4r4lysSgLE/mqdefault.jpg',
                 duration: 322
             },
             {
                 id: 'p1JPKLa-Ofc',
-                title: 'Drunk in Love ft. JAY Z',
-                thumbnail: 'http://img.youtube.com/vi/p1JPKLa-Ofc/mqdefault.jpg',
+                title: 'Drunk in Love (Explicit) ft. JAY Z',
                 duration: 382
             },
             {
                 id: 'CIELYkfoKy8',
                 title: 'Blow',
-                thumbnail: 'http://img.youtube.com/vi/CIELYkfoKy8/mqdefault.jpg',
                 duration: 326
             },
             {
                 id: 'd7PPjEB2QZQ',
                 title: 'No Angel',
-                thumbnail: 'http://img.youtube.com/vi/d7PPjEB2QZQ/mqdefault.jpg',
                 duration: 234
             },
             {
                 id: 'pZ12_E5R3qc',
                 title: 'Partition',
-                thumbnail: 'http://img.youtube.com/vi/pZ12_E5R3qc/mqdefault.jpg',
                 duration: 230
             },
             {
                 id: 'WQmYVfHrNxA',
                 title: 'Jealous',
-                thumbnail: 'http://img.youtube.com/vi/WQmYVfHrNxA/mqdefault.jpg',
                 duration: 207
             },
             {
                 id: 'sAz2bRy8-L8',
                 title: 'Rocket',
-                thumbnail: 'http://img.youtube.com/vi/sAz2bRy8-L8/mqdefault.jpg',
                 duration: 270
             },
             {
                 id: 'IDvu1ehPq0g',
                 title: 'Mine ft. Drake',
-                thumbnail: 'http://img.youtube.com/vi/IDvu1ehPq0g/mqdefault.jpg',
                 duration: 300
             },
             {
                 id: '3xUfCUFPL-8',
                 title: 'XO',
-                thumbnail: 'http://img.youtube.com/vi/3xUfCUFPL-8/mqdefault.jpg',
                 duration: 217
             },
             {
                 id: 'IyuUWOnS9BY',
                 title: '***Flawless ft. Chimamanda Ngozi Adichie',
-                thumbnail: 'http://img.youtube.com/vi/IyuUWOnS9BY/mqdefault.jpg',
                 duration: 253
             },
             {
                 id: 'OQBMQ_2x8Pc',
                 title: 'Superpower ft. Frank Ocean',
-                thumbnail: 'http://img.youtube.com/vi/OQBMQ_2x8Pc/mqdefault.jpg',
                 duration: 325
             },
             {
                 id: 'QyOok1myLjw',
                 title: 'Heaven',
-                thumbnail: 'http://img.youtube.com/vi/QyOok1myLjw/mqdefault.jpg',
                 duration: 236
             },
             {
                 id: 'gSsMhQv6KZ8',
                 title: 'Blue ft. Blue Ivy',
-                thumbnail: 'http://img.youtube.com/vi/gSsMhQv6KZ8/mqdefault.jpg',
                 duration: 276
             },
             {
                 id: 'k4YRWT_Aldo',
                 title: '7/11',
-                thumbnail: 'http://img.youtube.com/vi/k4YRWT_Aldo/mqdefault.jpg',
                 duration: 217
             },
             {
                 id: 'qZaLAAcehX4',
                 title: 'Flawless Remix',
-                thumbnail: 'http://img.youtube.com/vi/qZaLAAcehX4/mqdefault.jpg',
                 duration: 235
             },
             {
                 id: 'BH17mbL2QMA',
                 title: 'Drunk in Love Remix',
-                thumbnail: 'http://img.youtube.com/vi/BH17mbL2QMA/mqdefault.jpg',
                 duration: 396
             },
             {
                 id: 'c4cIBw_yFM4',
                 title: 'Ring Off',
-                thumbnail: 'http://img.youtube.com/vi/c4cIBw_yFM4/mqdefault.jpg',
                 duration: 181
             },
             {
                 id: 'KiHkUS_zVlI',
                 title: 'Blow Remix',
-                thumbnail: 'http://img.youtube.com/vi/KiHkUS_zVlI/mqdefault.jpg',
                 duration: 310
             },
             {
                 id: 'Vd_Wf9aj53U',
                 title: 'Standing on the Sun Remix',
-                thumbnail: 'http://img.youtube.com/vi/Vd_Wf9aj53U/mqdefault.jpg',
                 duration: 274
             }
         ]
     },
     {
-        name: 'ANTI',
         id: 'OLAK5uy_lnMdsGA9i4rd3GAgarcRAVTW1h4e82BjI',
-        artist:'Rihanna',
+        name: 'ANTI',
+        artist: 'Rihanna',
         cover: './images/anti.png',
         items: [
             {
                 id: 'WSSShAOKYfo',
                 title: 'Consideration',
-                thumbnail: 'http://img.youtube.com/vi/WSSShAOKYfo/mqdefault.jpg',
                 duration: 162
             },
             {
                 id: 'fyh8kn4pM5c',
                 title: 'James Joint',
-                thumbnail: 'http://img.youtube.com/vi/fyh8kn4pM5c/mqdefault.jpg',
                 duration: 73
             },
             {
                 id: '49lY0HqqUVc',
                 title: 'Kiss It Better',
-                thumbnail: 'http://img.youtube.com/vi/49lY0HqqUVc/mqdefault.jpg',
                 duration: 249
             },
             {
                 id: 'HL1UzIK-flA',
                 title: 'Work ft. Drake',
-                thumbnail: 'http://img.youtube.com/vi/HL1UzIK-flA/mqdefault.jpg',
                 duration: 455
             },
             {
                 id: 'GSup7sP2IwQ',
                 title: 'Desperado',
-                thumbnail: 'http://img.youtube.com/vi/GSup7sP2IwQ/mqdefault.jpg',
                 duration: 187
             },
             {
                 id: 'i0S40arGfCQ',
                 title: 'Woo',
-                thumbnail: 'http://img.youtube.com/vi/i0S40arGfCQ/mqdefault.jpg',
                 duration: 236
             },
             {
                 id: 'wfN4PVaOU5Q',
                 title: 'Needed Me',
-                thumbnail: 'http://img.youtube.com/vi/wfN4PVaOU5Q/mqdefault.jpg',
                 duration: 195
             },
             {
                 id: '2mnI-zqqEwY',
                 title: 'Yeah, I Said It',
-                thumbnail: 'http://img.youtube.com/vi/2mnI-zqqEwY/mqdefault.jpg',
                 duration: 134
             },
             {
                 id: '6LqnBrBSFyU',
                 title: 'Same Ol’ Mistakes',
-                thumbnail: 'http://img.youtube.com/vi/6LqnBrBSFyU/mqdefault.jpg',
                 duration: 398
             },
             {
                 id: 'Rjc1ffvBCa0',
                 title: 'Never Ending',
-                thumbnail: 'http://img.youtube.com/vi/Rjc1ffvBCa0/mqdefault.jpg',
                 duration: 203
             },
             {
                 id: 'QMP-o8WXSPM',
                 title: 'Love On The Brain',
-                thumbnail: 'http://img.youtube.com/vi/QMP-o8WXSPM/mqdefault.jpg',
                 duration: 225
             },
             {
                 id: 'zzOs66hec8U',
                 title: 'Higher',
-                thumbnail: 'http://img.youtube.com/vi/zzOs66hec8U/mqdefault.jpg',
                 duration: 121
             },
             {
                 id: '266ldDxE3aA',
                 title: 'Close To You',
-                thumbnail: 'http://img.youtube.com/vi/266ldDxE3aA/mqdefault.jpg',
                 duration: 224
+            }
+        ]
+    },
+    {
+        id: 'PLT5kE8dBKiP7hCAfkVzoi8TmbGbyZKZa8',
+        name: 'sweetner',
+        artist: 'Ariana Grande',
+        cover: './images/sweetner.png',
+        items: [
+            {
+                id: '-ZoJSLB2N18',
+                title: 'raindrops (an angel cried)',
+                duration: 39
+            },
+            {
+                id: 'h5Ne3YcZCVI',
+                title: 'blazed ft. Pharrell Williams',
+                duration: 198
+            },
+            {
+                id: 'OQitfe8u7i4',
+                title: 'the light is coming ft. Nicki Minaj',
+                duration: 233
+            },
+            {
+                id: 'AVPEP_KSldA',
+                title: 'R.E.M.',
+                duration: 247
+            },
+            {
+                id: 'kHLHSlExFis',
+                title: 'God is a woman',
+                duration: 242
+            },
+            {
+                id: '6vay5SgNPpk',
+                title: 'sweetener',
+                duration: 210
+            },
+            {
+                id: '_IvArrFhcp0',
+                title: 'successful',
+                duration: 229
+            },
+            {
+                id: 'MYvjW3zdCws',
+                title: 'everytime',
+                duration: 174
+            },
+            {
+                id: 'kN0iD0pI3o0',
+                title: 'breathin',
+                duration: 203
+            },
+            {
+                id: 'ffxKSjUwKdU',
+                title: 'no tears left to cry',
+                duration: 239
+            },
+            {
+                id: 'F9-SYDu6ZI4',
+                title: 'borderline ft. Missy Elliott',
+                duration: 179
+            },
+            {
+                id: '-mNEr0OGusU',
+                title: 'better off',
+                duration: 173
+            },
+            {
+                id: 'sXJ2hajo6rw',
+                title: 'goodnight n go',
+                duration: 191
+            },
+            {
+                id: 'ba8CifMRZ2Y',
+                title: 'pete davidson',
+                duration: 75
+            },
+            {
+                id: 'hXU4P6j3TNY',
+                title: 'get well soon',
+                duration: 324
+            }
+        ]
+    },
+    {
+        id: 'PLDbNQbs2w6w3-ud9WUowPBBi4HkbLQjeZ',
+        name: 'Square Up',
+        artist: 'BLACKPINK',
+        cover: './images/squareUp.png',
+        items: [
+            {
+                id: '9KoV0f1blYM',
+                title: 'BOOMBAYAH (붐바야)',
+                duration: 246
+            },
+            {
+                id: 'FVRi9pwoSMk',
+                title: 'WHISTLE (휘파람)',
+                duration: 216
+            },
+            {
+                id: 'T_AAvXodGoI',
+                title: 'PLAYING WITH FIRE (불장난)',
+                duration: 201
+            },
+            {
+                id: 'bnYJz_-fB6A',
+                title: 'STAY',
+                duration: 231
+            },
+            {
+                id: '7a6cSga74lo',
+                title: 'WHISTLE (휘파람) (Acoustic Ver.)',
+                duration: 226
+            },
+            {
+                id: 'OUf5OOlPoJM',
+                title: 'AS IF ITS YOUR LAST (마지막처럼)',
+                duration: 214
+            },
+            {
+                id: 'eRDe7bOp5uA',
+                title: 'SO HOT (THEBLACKLABEL Remix)',
+                duration: 140
+            },
+            {
+                id: 'pYKPJl1PIIw',
+                title: 'DDU-DU DDU-DU (뚜두뚜두)',
+                duration: 216
+            },
+            {
+                id: 's_7yNDzG7OI',
+                title: 'Forever Young',
+                duration: 241
+            },
+            {
+                id: 'tNz0ziHudKU',
+                title: 'See U Later',
+                duration: 201
+            },
+            {
+                id: 'VkVIUcWeljY',
+                title: 'Really',
+                duration: 201
+            },
+            {
+                id: 'AX3Bsiq-13k',
+                title: 'Kiss and Make Up ft. Dua Lipa',
+                duration: 190
+            },
+            {
+                id: '1JgNRkZ4_lk',
+                title: 'Kill This Love',
+                duration: 191
+            },
+            {
+                id: '1oYwBgFOTHg',
+                title: 'Don\'t Know What To Do',
+                duration: 206
+            },
+            {
+                id: 'kER2-n1E4kU',
+                title: 'Kick It',
+                duration: 196
+            },
+            {
+                id: 'g9cexhcjc9c',
+                title: 'Hope Not (아니길)',
+                duration: 196
+            },
+            {
+                id: 'VXqjlXRiX7Q',
+                title: 'DDU-DU DDU-DU (Remix)',
+                duration: 206
             }
         ]
     }

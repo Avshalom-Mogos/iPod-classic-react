@@ -2,22 +2,17 @@ import React, { createContext, useState } from 'react';
 import data from './data';
 
 
-console.log('Context File');
-
-
 export const IpodStateContext = createContext();
 export const IpodStateProvider = (props) => {
 
-    console.log('Context Provider def'.toUpperCase());
-
-    const [ipodState, setIpodState] = useState('coverflow');
+    const [ipodState, setIpodState] = useState('screenSaver');
     const [isOn, setIsOn] = useState(false);
     const [albums, setAlbums] = useState(data);
 
     //togglers
-    const [toggleScreenSaver, setToggleScreenSaver] = useState(false);
+    const [toggleScreenSaver, setToggleScreenSaver] = useState(true);
     const [toggleMenu, setToggleMenu] = useState(false);
-    const [toggleCoverflow, setToggleCoverflow] = useState(true);
+    const [toggleCoverflow, setToggleCoverflow] = useState(false);
     const [togglePlayer, setTogglePlayer] = useState(false);
     const [toggleProgressBar, setToggleProgressBar] = useState(true);
     const [toggleVolumeBar, setToggleVolumeBar] = useState(false);

@@ -1,24 +1,22 @@
 .IpodButtons{
-    height: 55%;
+    height: 50%;
     display: flex;
     user-select: none; 
-    /* check this ^^^^^^^ */
 }
 
 .wheel{
     /* background-color: white;  OLD*/
     background-color: rgb(33, 46, 56);  
-    width: 235px;
-    height: 235px;
+    width: 60vw;
+    height: 60vw;
+    max-width: 270px;
+    max-height: 270px;
     margin: auto auto;
     border-radius: 50%;
-    /* border: 0.01cm  outset gray;  */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    /* gap: 0.5rem; */
     padding: 15px;
-    
 }
 
 

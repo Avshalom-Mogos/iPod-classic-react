@@ -5,10 +5,18 @@
     max-height: 830px;
     background-image: linear-gradient(rgb(98, 96, 99),rgb(46, 46, 46));
     margin: auto auto;
-    /* background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230)); OLD 
+    /* background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230)); OLD  */
     border-radius: 20px; 
     border-right: #C3CAD2 5px outset;
     border-left: #909599 5px outset;
     border-top: #D2D5DA 5px outset;
-    border-bottom: #737278 5px outset; */
+    border-bottom: #737278 5px outset;
+    box-shadow: 3px 3px 3px black;
+}
+
+@media screen and (max-width: 430px) {
+    .Ipod {
+        border: none;
+        border-radius: 0; 
+    }
 }

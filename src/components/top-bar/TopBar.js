@@ -1,18 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, memo } from 'react';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
 import classes from './TopBar.module.css';
 
 
 const TopBar = (props) => {
 
-console.log('TopBar RENDER');
-
-
-
     const { title } = props;
     const { player } = useContext(IpodStateContext);
+
     const setIcon = () => {
-        if(!window.YT) return
+        if (!window.YT) return
         if (player.state === window.YT.PlayerState.PLAYING) return 'fas fa-play';
         if (player.state === window.YT.PlayerState.PAUSED) return 'fas fa-pause';
         if (player.state === window.YT.PlayerState.BUFFERING) return 'fas fa-spinner';
@@ -32,4 +29,4 @@ console.log('TopBar RENDER');
         </div>
     )
 };
-export default TopBar;
+export default memo(TopBar);

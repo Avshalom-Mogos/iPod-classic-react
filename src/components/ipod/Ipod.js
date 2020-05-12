@@ -8,8 +8,6 @@ import classes from './Ipod.module.css';
 
 
 const Ipod = () => {
-    console.log('Ipod RENDER');
-
     return (
         <div className={classes.Ipod}>
             <IpodStateProvider>

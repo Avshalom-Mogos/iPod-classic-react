@@ -70,7 +70,6 @@ const IpodButtons = () => {
                     <i className='fas fa-pause'></i>
                 </button>
             </div>
-            {/* <button onClick={() => context.player.obj.mute()}>MUTE</button> */}
         </div>
     )
 };

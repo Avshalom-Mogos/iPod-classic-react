@@ -1,31 +1,29 @@
-import React, { useContext, useRef, useEffect, createRef } from 'react';
-import classes from './AlbumCard.module.css';
+import React, { useContext, useRef, useEffect, createRef, memo } from 'react';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
+import classes from './AlbumCard.module.css';
 
 
 const AlbumCard = (props) => {
 
-    console.log("AlbumCard RENDER");
-
-
     const { name, artist, items, thumbnail, index, styles } = props;
-    let { coverflowSelectedIndex, flipCard, flipCardSelected } = useContext(IpodStateContext);
+    const { coverflowSelectedIndex, flipCard, flipCardSelected } = useContext(IpodStateContext);
 
     useEffect(() => {
 
         if (index === coverflowSelectedIndex && flipCard) {
-
+            //scroll to flip card scelcted
             sctrollToView(elementsRef.current[flipCardSelected].current)
         };
     })
 
-    const flip = () => {
-        if (flipCard && index === coverflowSelectedIndex) {
-            return {
-                transform: 'rotateY(180deg) scale(1.7,1.2)',
-                height: '145%'
-            };
-        };
+    const flip = (flipCard && index === coverflowSelectedIndex) ? classes.flip : '';
+
+    const formatTime = time => {
+        // if song duration is over 10min show 5 char string
+        return time >= 600 ?
+            new Date(time * 1000).toISOString().substr(14, 5)
+            :
+            new Date(time * 1000).toISOString().substr(15, 4)
     };
 
     const sctrollToView = (element) => {
@@ -37,7 +35,7 @@ const AlbumCard = (props) => {
 
     return (
         <div className={classes.AlbumCard} style={styles}>
-            <div className={classes.inner} style={flip()}>
+            <div className={`${classes.inner} ${flip}`}>
                 <div className={classes.front}>
                     <img src={thumbnail} alt="albumImg" />
                 </div>
@@ -55,14 +53,14 @@ const AlbumCard = (props) => {
                                     ref={elementsRef.current[i]}
                                 >
                                     <span>{song.title}</span>
-                                    <span>{new Date(song.duration * 1000).toISOString().substr(15, 4)}</span>
+                                    <span>{formatTime(song.duration)}</span>
                                 </li>
                             )
                         })}
                     </ul>
                 </div>
             </div>
-        </div>
+        </div >
     )
 };
-export default AlbumCard;
+export default memo(AlbumCard);

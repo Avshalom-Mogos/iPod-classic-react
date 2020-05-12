@@ -32,6 +32,7 @@ export const handleMove = (e, context) => {
         setFlipCardSelected,
         player,
         setVolumeLevel,
+        toggleVolumeBar,
         setToggleVolumeBar
     } = context;
 
@@ -47,7 +48,6 @@ export const handleMove = (e, context) => {
         //check if there is no change
         if (posY - panMode.prevPosition.y === 0
             || posY - panMode.prevPosition.y === 0) {
-            // console.log(panMode.direction)
             return
         };
 
@@ -77,8 +77,7 @@ export const handleMove = (e, context) => {
 
             clockwiseCounter++;
             if (clockwiseCounter % panMode.speed === 0) {
-                console.log("RIGHT");
-                // window.navigator.vibrate([200])
+
                 if (ipodState === 'menu' && menuSelected < 3) {
                     setMenuSelected(menuSelected + 1);
                 } else if (ipodState === 'coverflow' && coverflowSelectedIndex < albums.length - 1 && !flipCard) {
@@ -86,22 +85,18 @@ export const handleMove = (e, context) => {
                 } else if (ipodState === 'coverflow' && flipCardSelected < albums[coverflowSelectedIndex].items.length - 1 && flipCard) {
                     setFlipCardSelected(flipCardSelected + 1)
                 } else if (ipodState === 'player') {
-                    setToggleVolumeBar(true);
-                    player.obj.setVolume(player.obj.getVolume() + 5);
+                    if(!toggleVolumeBar) setToggleVolumeBar(true);
+                    player.obj.setVolume(player.obj.getVolume() + 10);
                     setVolumeLevel(player.obj.getVolume());
                 };
             };
-            return
-        };
 
-        if (counterClockwise) {
+        } else if (counterClockwise) {
             panMode.direction = 'counterClockwise';
 
             counterClockwiseCounter++;
             if (counterClockwiseCounter % panMode.speed === 0) {
-                console.log("LEFT");
 
-                // navigator.vibrate(200)
                 if (ipodState === 'menu' && menuSelected > 0) {
                     setMenuSelected(menuSelected - 1);
                 } else if (ipodState === 'coverflow' && coverflowSelectedIndex > 0 && !flipCard) {
@@ -109,12 +104,12 @@ export const handleMove = (e, context) => {
                 } else if (ipodState === 'coverflow' && flipCardSelected > 0 && flipCard) {
                     setFlipCardSelected(flipCardSelected - 1);
                 } else if (ipodState === 'player') {
-                    setToggleVolumeBar(true);
-                    player.obj.setVolume(player.obj.getVolume() - 5);
+                    
+                    if(!toggleVolumeBar) setToggleVolumeBar(true);
+                    player.obj.setVolume(player.obj.getVolume() - 10);
                     setVolumeLevel(player.obj.getVolume());
                 };
             };
-            return
         };
     };
 };

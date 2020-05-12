@@ -10,24 +10,11 @@
     height: 70%;
     background-color: transparent;
 
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    
-    -webkit-transition: all 400ms ease-out;
-    -moz-transition: all 400ms ease-out;
-    -ms-transition: all 400ms ease-out;
-    -o-transition: all 400ms ease-out;
-    transition: all 400ms ease-out;
 
-    -webkit-box-reflect: below 0 linear-gradient(to bottom, transparent,transparent,transparent,rgba(0,0,0,0.3));
-    
-    /* -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.3, transparent), to(white));  */
-    /* -webkit-box-reflect: below 0 linear-gradient(transparent,transparent,transparent,rgba(0,0,0,0.2)); */
-    /* border: 1px solid red; */
-     /* will-change: transform; */
-    /*translate: translateZ(0); */
+    transition: transform 400ms ease-in-out;
+
+    /* -webkit-box-reflect: below 0 linear-gradient(to bottom, transparent,transparent,transparent,rgba(0,0,0,0.3)); */
 }
 
 .front, .back{
@@ -44,6 +31,7 @@
     height: 100%;
     transition: inherit;
     transform-style: inherit;
+    will-change: transform, height;
 }
 
 .front img{
@@ -54,6 +42,11 @@
 .back{
     transform: rotateY(180deg);
     border: 1px solid rgb(91, 94, 114);
+}
+
+.flip{
+    transform: rotateY(180deg) scale(1.7,1.2);
+    height: 145%;
 }
 
 
@@ -79,7 +72,6 @@
 
 .albumInfoName{
     text-transform: capitalize;
-    /* font-size: 0.5rem; */
 }
 
 .albumInfoArtist{
@@ -92,7 +84,6 @@
     background-color: white;
     list-style: none;
     overflow: auto;
-    /* scroll-behavior: smooth; */
 }
 
 .back li span:first-child{
@@ -105,7 +96,7 @@
 
 .back li{
    font-size: 10px;
-   font-weight: 600;
+   font-weight: 500;
    padding: 5px;
    display: flex;
    justify-content: space-between;
@@ -117,5 +108,3 @@
     border-bottom: 1px outset rgb(75, 142, 213);
     background-image: linear-gradient(rgb(93, 168, 231),rgb(48, 130, 219));
 }
-
-/* SCTROLLBAR */

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect,memo } from 'react';
 import TopBar from '../top-bar/TopBar';
 import ProgressBar from '../progress-bar/ProgressBar';
 import VolumeBar from '../volume-bar/VolumeBar'
@@ -9,21 +9,22 @@ import classes from './Player.module.css';
 
 const Player = () => {
 
-    console.log('PLAYER RENDER');
-
-    const {player,loadPlaylist,} = useContext(IpodStateContext);
+    const { player, loadPlaylist, setLoadPlaylist } = useContext(IpodStateContext);
     const { album, song, songIndex } = useContext(PlayerContext);
 
     useEffect(() => {
-        //prevent reload after coming from Menu
+        
+        //prevent reload when coming from Menu
         if (loadPlaylist) {
-            //load playlist
-            player.obj.cuePlaylist({
+         
+            player.obj.loadPlaylist({
                 listType: 'playlist',
                 list: album.id,
+                index: songIndex
             });
+            setLoadPlaylist(false);
         };
-    }, [album.id, player.obj]);
+    }, [album.id, player.obj, loadPlaylist, setLoadPlaylist, songIndex]);
 
 
     return (
@@ -45,4 +46,4 @@ const Player = () => {
         </div>
     )
 };
-export default Player;
+export default memo(Player);

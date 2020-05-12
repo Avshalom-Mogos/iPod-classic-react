@@ -1,7 +1,12 @@
-1. fix bug when screen shrink when console/keybord is open.
-2. fix ok btn style. ---> DONE.
-3. fix bug on daft punk - too long (song duration is messed up).
-4. fix bug on player cover art reflection.
-5. add more albums.
-6. formt Names / add albums with audio only.
-7. add silde in animation according to page order.
+// ------ todos ------ \\
+# add change theme gray/black (SETTINGS)
+# add about screen
+# delete youtube loader opts?
+# remove scroll bar in cardflip on PC
+# fix  volume bar delay on change
+
+
+// ------ possible features to add later ------ \\
+# add animation according to page order
+# enable user to add album
+# go to screen saver after x seconds
