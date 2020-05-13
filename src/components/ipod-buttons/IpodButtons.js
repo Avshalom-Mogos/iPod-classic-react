@@ -34,16 +34,18 @@ const IpodButtons = () => {
                 <button
                     className={classes.menu}
                     onClick={() => handleMenuClick(context)}
-                >MENU</button>
+                >MENU
+                </button>
 
-                <button
-                    className={classes.backward}
-                    onMouseDown={() => handleForwardBackwardDown(context, "rewind")}
-                    onMouseUp={() => handleForwardBackwardUp(context, 'left')}
-                    onTouchStart={() => handleForwardBackwardDown(context, "rewind")}
-                    onTouchEnd={stopHoldState}
-                >
-                    <i className='fas fa-fast-backward'></i>
+                <button className={classes.backward}>
+                    <i
+                        className='fas fa-fast-backward'
+                        onMouseDown={() => handleForwardBackwardDown(context, "rewind")}
+                        onMouseUp={() => handleForwardBackwardUp(context, 'left')}
+                        onTouchStart={() => handleForwardBackwardDown(context, "rewind")}
+                        onTouchEnd={stopHoldState}
+                    >
+                    </i>
                 </button>
 
                 <div
@@ -52,14 +54,15 @@ const IpodButtons = () => {
                 >
                 </div>
 
-                <button
-                    className={classes.forward}
-                    onMouseDown={() => handleForwardBackwardDown(context, "fastForward")}
-                    onMouseUp={() => handleForwardBackwardUp(context, 'right')}
-                    onTouchStart={() => handleForwardBackwardDown(context, "fastForward")}
-                    onTouchEnd={stopHoldState}
-                >
-                    <i className='fas fa-fast-forward'></i>
+                <button className={classes.forward}>
+                    <i
+                        className='fas fa-fast-forward'
+                        onMouseDown={() => handleForwardBackwardDown(context, "fastForward")}
+                        onMouseUp={() => handleForwardBackwardUp(context, 'right')}
+                        onTouchStart={() => handleForwardBackwardDown(context, "fastForward")}
+                        onTouchEnd={stopHoldState}
+                    >
+                    </i>
                 </button>
 
                 <button
@@ -70,7 +73,7 @@ const IpodButtons = () => {
                     <i className='fas fa-pause'></i>
                 </button>
             </div>
-        </div>
+        </div >
     )
 };
 export default IpodButtons;

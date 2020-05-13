@@ -3,7 +3,7 @@
 # add about screen
 # delete youtube loader opts?
 # remove scroll bar in cardflip on PC
-# fix  volume bar delay on change
+# fix volume bar delay on change
 
 
 // ------ possible features to add later ------ \\

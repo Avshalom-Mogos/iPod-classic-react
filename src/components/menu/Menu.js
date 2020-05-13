@@ -15,20 +15,25 @@ const Menu = () => {
 
     useEffect(() => {
 
-        //show coming soon image
-        if (menuSelected > 1) {
-            const comingSoonImg = 'https://www.traducta.fr/wp-content/uploads/2015/10/coming-soon-logo_okok.jpg';
-            setUrl(comingSoonImg);
-            return
+        let url = '';
+
+        if (menuSelected === 0) {
+            const randIndex = Math.floor(Math.random() * albums.length);
+            url = albums[randIndex].cover;
+
+        } else if (menuSelected === 1) {
+            const randIndex = Math.floor(Math.random() * albums.length);
+            url = album.cover || albums[randIndex].cover;
+
+        } else {
+            url = 'https://www.traducta.fr/wp-content/uploads/2015/10/coming-soon-logo_okok.jpg';
         };
 
-        //show random album cover
-        const randIndex = Math.floor(Math.random() * albums.length);
-        const url = albums[randIndex].cover;
+        //show menu image
         setUrl(url);
         setLoadPlaylist(false)
 
-    }, [albums, setLoadPlaylist, menuSelected])
+    }, [albums, setLoadPlaylist, menuSelected, album.cover])
 
     return (
         <div className={classes.Menu} style={{ zIndex: setZindex('menu') }}>
@@ -40,9 +45,9 @@ const Menu = () => {
                             <p>Cover Flow</p>
                             <i className='fas fa-chevron-right'></i>
                         </li>
-                        <li 
-                        className={menuSelected === 1 ? classes.selected : ''}
-                        style={setDisabled}
+                        <li
+                            className={menuSelected === 1 ? classes.selected : ''}
+                            style={setDisabled}
                         >
                             <p>Now Playing</p>
                             <i className='fas fa-chevron-right'></i>
