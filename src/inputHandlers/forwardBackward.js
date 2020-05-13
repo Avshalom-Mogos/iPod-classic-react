@@ -6,6 +6,7 @@ const holdState = {
 
 export const handleForwardBackwardDown = (context, action) => {
 
+
     const { ipodState, player, toggleVolumeBar } = context;
 
     if (ipodState === 'player' && !toggleVolumeBar) {
@@ -14,7 +15,7 @@ export const handleForwardBackwardDown = (context, action) => {
         const interval = setInterval(() => {
             holdState.duration++;
             holdState.active = holdState.duration > 25 ? true : false;
-            
+
             if (holdState.active) actions[action](player.obj);
 
         }, 10);
@@ -42,10 +43,11 @@ export const handleForwardBackwardUp = (context, direction) => {
         coverflowSelectedIndex,
         setCoverflowSelectedIndex,
         albums,
-        flipCard
+        flipCard,
+        toggleVolumeBar
     } = context;
 
-    if (ipodState === 'player') {
+    if (ipodState === 'player' && !toggleVolumeBar) {
 
         // if hold state active stop it and exit function
         if (holdState.active) {
