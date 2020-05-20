@@ -37,9 +37,16 @@
    
 }
 
-.playPause{
+.icon{
     line-height: 1px;
     font-size: 0.7rem;
+}
+
+.playPause{
     color: rgb(120, 200, 249);
     text-shadow: 2px 0 0 rgb(88, 144, 196), -1px 0 0 rgb(88, 144, 196), 0 1px 0 rgb(88, 144, 196), 0 -1px 0 rgb(88, 144, 196), 1px 1px rgb(88, 144, 196), -1px -1px 0 rgb(88, 144, 196), 1px -1px 0 rgb(88, 144, 196), -1px 1px 0 rgb(88, 144, 196);
+}
+
+.spinner{
+    color: darkgreen;
 }

@@ -10,9 +10,9 @@ const TopBar = (props) => {
 
     const setIcon = () => {
         if (!window.YT) return
-        if (player.state === window.YT.PlayerState.PLAYING) return 'fas fa-play';
-        if (player.state === window.YT.PlayerState.PAUSED) return 'fas fa-pause';
-        if (player.state === window.YT.PlayerState.BUFFERING) return 'fas fa-spinner';
+        if (player.state === window.YT.PlayerState.PLAYING) return `fas fa-play ${classes.playPause}`;
+        if (player.state === window.YT.PlayerState.PAUSED) return `fas fa-pause ${classes.playPause}`;
+        if (player.state === window.YT.PlayerState.BUFFERING) return `fas fa-spinner fa-pulse ${classes.spinner}`;
         return "";
     };
 
@@ -20,7 +20,7 @@ const TopBar = (props) => {
         <div className={classes.TopBar}>
             <div className={classes.title}>{title}</div>
             <div className={classes.icons}>
-                <i className={`${setIcon()} ${classes.playPause}`}></i>
+                <i className={`${setIcon()} ${classes.icon}`}></i>
                 <div className={classes.battery}>
                     <div className={classes.batteryBody}></div>
                     <div className={classes.batteryHead}></div>
