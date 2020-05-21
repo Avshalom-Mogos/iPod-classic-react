@@ -57,7 +57,12 @@ export const handleForwardBackwardUp = (context, direction) => {
 
         //normal click
         stopHoldState();
-        player.obj.nextVideo();
+        if (direction === 'right')  {
+            player.obj.nextVideo();
+        } else if (direction === 'left') {
+            player.obj.previousVideo();
+        };
+      
 
     } else if (ipodState === 'coverflow') {
 
@@ -65,8 +70,7 @@ export const handleForwardBackwardUp = (context, direction) => {
             setCoverflowSelectedIndex(coverflowSelectedIndex + 1)
         } else if (direction === 'left' && coverflowSelectedIndex > 0 && !flipCard) {
             setCoverflowSelectedIndex(coverflowSelectedIndex - 1)
-        }
-
+        };
     };
 };
 
