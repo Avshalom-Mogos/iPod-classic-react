@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/iPod-classic-react/static/css/main.ca9a4c44.chunk.css",
-    "main.js": "/iPod-classic-react/static/js/main.d69bbf99.chunk.js",
-    "main.js.map": "/iPod-classic-react/static/js/main.d69bbf99.chunk.js.map",
-    "runtime-main.js": "/iPod-classic-react/static/js/runtime-main.bced8ddc.js",
-    "runtime-main.js.map": "/iPod-classic-react/static/js/runtime-main.bced8ddc.js.map",
-    "static/js/2.b461fd94.chunk.js": "/iPod-classic-react/static/js/2.b461fd94.chunk.js",
-    "static/js/2.b461fd94.chunk.js.map": "/iPod-classic-react/static/js/2.b461fd94.chunk.js.map",
-    "index.html": "/iPod-classic-react/index.html",
-    "precache-manifest.00705937fdd64129cc20d21e60acab9e.js": "/iPod-classic-react/precache-manifest.00705937fdd64129cc20d21e60acab9e.js",
-    "service-worker.js": "/iPod-classic-react/service-worker.js",
-    "static/css/main.ca9a4c44.chunk.css.map": "/iPod-classic-react/static/css/main.ca9a4c44.chunk.css.map",
-    "static/js/2.b461fd94.chunk.js.LICENSE.txt": "/iPod-classic-react/static/js/2.b461fd94.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.91e5d88b.chunk.css",
+    "main.js": "./static/js/main.1fb811a0.chunk.js",
+    "main.js.map": "./static/js/main.1fb811a0.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.eef35e72.js",
+    "runtime-main.js.map": "./static/js/runtime-main.eef35e72.js.map",
+    "static/js/2.cfac049e.chunk.js": "./static/js/2.cfac049e.chunk.js",
+    "static/js/2.cfac049e.chunk.js.map": "./static/js/2.cfac049e.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.9285d54960a26f1fec84d3610fd5d68a.js": "./precache-manifest.9285d54960a26f1fec84d3610fd5d68a.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.91e5d88b.chunk.css.map": "./static/css/main.91e5d88b.chunk.css.map",
+    "static/js/2.cfac049e.chunk.js.LICENSE.txt": "./static/js/2.cfac049e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bced8ddc.js",
-    "static/js/2.b461fd94.chunk.js",
-    "static/css/main.ca9a4c44.chunk.css",
-    "static/js/main.d69bbf99.chunk.js"
+    "static/js/runtime-main.eef35e72.js",
+    "static/js/2.cfac049e.chunk.js",
+    "static/css/main.91e5d88b.chunk.css",
+    "static/js/main.1fb811a0.chunk.js"
   ]
 }
