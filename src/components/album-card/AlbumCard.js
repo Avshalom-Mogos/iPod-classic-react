@@ -5,7 +5,7 @@ import classes from './AlbumCard.module.css';
 
 const AlbumCard = (props) => {
 
-    const { name, artist, items, thumbnail, index, styles } = props;
+    const { name, artist, items, cover, index, styles } = props;
     const { coverflowSelectedIndex, flipCard, flipCardSelected } = useContext(IpodStateContext);
 
     useEffect(() => {
@@ -37,7 +37,7 @@ const AlbumCard = (props) => {
         <div className={classes.AlbumCard} style={styles}>
             <div className={`${classes.inner} ${flip}`}>
                 <div className={classes.front}>
-                    <img src={thumbnail} alt="albumImg" />
+                    <img src={cover} alt="albumImg" />
                 </div>
                 <div className={classes.back}>
                     <div className={classes.albumInfo}>

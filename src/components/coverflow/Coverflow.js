@@ -79,7 +79,7 @@ const Coverflow = () => {
                                 name={album.name}
                                 artist={album.artist}
                                 items={album.items}
-                                thumbnail={album.cover}
+                                cover={album.cover}
                             />
                         )
                     })}

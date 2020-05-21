@@ -29,6 +29,7 @@
 .menu{
     grid-column: 2 / 3;
     align-self: flex-start;
+    cursor: pointer;
 }
 
 .backward{
@@ -43,7 +44,8 @@
     /* background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230)); OLD*/
     background-image: linear-gradient(rgb(60, 60, 62),rgb(112, 110, 113));
     border-radius: 50%;
-    transform: scale(1.3)
+    transform: scale(1.3);
+    cursor: pointer;
 }
 
 .forward{
@@ -55,17 +57,20 @@
 .playPause{
     grid-column: 2 / 3;
     align-self: flex-end;
-    /* color: rgb(172, 175, 190); */
     color: white;
+    /* color: rgb(172, 175, 190); OLD*/
 }
  
 .playPause i{
     padding: 3px;
 }
 
-
 .wheel button{
     background-color: transparent;
     outline: none;
     border: none;
+}
+
+.wheel i:hover{
+    cursor: pointer;
 }

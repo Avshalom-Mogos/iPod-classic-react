@@ -5,8 +5,8 @@ import handleOkClick from '../../inputHandlers/ok';
 import handleMenuClick from '../../inputHandlers/menu';
 import handlePlayPauseClick from '../../inputHandlers/playPause';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
-import classes from './IpodButtons.module.css';
 import { PlayerContext } from '../../contexts/PlayerContext';
+import classes from './IpodButtons.module.css';
 
 
 const IpodButtons = () => {
@@ -40,9 +40,9 @@ const IpodButtons = () => {
                 <button className={classes.backward}>
                     <i
                         className='fas fa-fast-backward'
-                        onMouseDown={() => handleForwardBackwardDown(context, "rewind")}
+                        onMouseDown={() => handleForwardBackwardDown(context, 'rewind')}
                         onMouseUp={() => handleForwardBackwardUp(context, 'left')}
-                        onTouchStart={() => handleForwardBackwardDown(context, "rewind")}
+                        onTouchStart={() => handleForwardBackwardDown(context, 'rewind')}
                         onTouchEnd={stopHoldState}
                     >
                     </i>
@@ -57,9 +57,9 @@ const IpodButtons = () => {
                 <button className={classes.forward}>
                     <i
                         className='fas fa-fast-forward'
-                        onMouseDown={() => handleForwardBackwardDown(context, "fastForward")}
+                        onMouseDown={() => handleForwardBackwardDown(context, 'fastForward')}
                         onMouseUp={() => handleForwardBackwardUp(context, 'right')}
-                        onTouchStart={() => handleForwardBackwardDown(context, "fastForward")}
+                        onTouchStart={() => handleForwardBackwardDown(context, 'fastForward')}
                         onTouchEnd={stopHoldState}
                     >
                     </i>
