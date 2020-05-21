@@ -17,6 +17,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 15px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 

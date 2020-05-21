@@ -48,7 +48,7 @@ const Coverflow = () => {
         if (selected) {
 
             return {
-                transform: 'rotateY(0deg)',
+                // transform: 'rotateY(0deg)',
                 zIndex: MAX_ZINDEX
             }
         };
