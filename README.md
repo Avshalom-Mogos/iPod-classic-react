@@ -4,6 +4,7 @@ live link : https://avshalom-mogos.github.io/iPod-classic-react/
 
 ## Technologies
 - React
+- CSS3
 
 ## Illustration
 <img src="https://raw.githubusercontent.com/Avshalom-Mogos/portfolio/master/src/assests/GIFs/iPodClassic.gif"/>
