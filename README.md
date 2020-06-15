@@ -1,6 +1,6 @@
 # Introduction
 iPod Classic  
-live link : https://avshalom-mogos.github.io/iPod-classic-react/
+Link : https://avshalom-mogos.github.io/iPod-classic-react/
 
 ## Technologies
 - React
