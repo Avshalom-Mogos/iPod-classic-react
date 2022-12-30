@@ -1,23 +1,24 @@
-import React, { useContext } from 'react';
+import * as React from 'react';
 import Menu from '../menu/Menu';
 import Coverflow from '../coverflow/Coverflow';
 import Player from '../player/Player';
 import ScreenSaver from '../screen-saver/ScreenSaver';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
 import classes from './IpodScreen.module.css';
+import { useTypedContext } from '../../hooks';
 
 
-const IpodScreen = () => {
-    
+const IpodScreen: React.FC<{}> = () => {
+
     const {
         toggleScreenSaver,
         toggleMenu,
         toggleCoverflow,
         togglePlayer
-    } = useContext(IpodStateContext);
+    } = useTypedContext(IpodStateContext);
 
     return (
-        <div className={classes.IpodScreen}>
+        <div className={classes.ipodScreen}>
             <div className={classes.content}>
                 {toggleScreenSaver && <ScreenSaver />}
                 {toggleMenu && <Menu />}
@@ -27,4 +28,5 @@ const IpodScreen = () => {
         </div>
     )
 };
+
 export default IpodScreen;

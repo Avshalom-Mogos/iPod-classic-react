@@ -1,3 +1,6 @@
+import { IpodContext, IpodState } from '../contexts/IpodStateContext';
+
+
 const panMode = {
     active: false,
     speed: 20,
@@ -8,7 +11,7 @@ const panMode = {
 let clockwiseCounter = 0;
 let counterClockwiseCounter = 0;
 
-export const handleDown = (e) => {
+export const handleDown = (e: any) => {
     panMode.active = true;
     const bounds = e.currentTarget.getBoundingClientRect();
     const posX = e.clientX - bounds.left;
@@ -19,7 +22,7 @@ export const handleDown = (e) => {
 
 export const StopPanMode = () => panMode.active = false;
 
-export const handleMove = (e, context) => {
+export const handleMove = (e: any, context: IpodContext) => {
     const {
         ipodState,
         menuSelected,
@@ -71,6 +74,8 @@ export const handleMove = (e, context) => {
         const clockwise = (onLeftSide && !panDown) || (onRightSide && !panUp);
         const counterClockwise = (onLeftSide && !panUp) || (onRightSide && !panDown);
 
+        // check for player
+        if (!player.obj) return;
 
         if (clockwise) {
             panMode.direction = 'clockwise';
@@ -78,14 +83,14 @@ export const handleMove = (e, context) => {
             clockwiseCounter++;
             if (clockwiseCounter % panMode.speed === 0) {
 
-                if (ipodState === 'menu' && menuSelected < 3) {
+                if (ipodState === IpodState.MENU && menuSelected < 3) {
                     setMenuSelected(menuSelected + 1);
-                } else if (ipodState === 'coverflow' && coverflowSelectedIndex < albums.length - 1 && !flipCard) {
+                } else if (ipodState === IpodState.COVER_FLOW && coverflowSelectedIndex < albums.length - 1 && !flipCard) {
                     setCoverflowSelectedIndex(coverflowSelectedIndex + 1)
-                } else if (ipodState === 'coverflow' && flipCardSelected < albums[coverflowSelectedIndex].items.length - 1 && flipCard) {
+                } else if (ipodState === IpodState.COVER_FLOW && flipCardSelected < albums[coverflowSelectedIndex].items.length - 1 && flipCard) {
                     setFlipCardSelected(flipCardSelected + 1)
-                } else if (ipodState === 'player') {
-                    if(!toggleVolumeBar) setToggleVolumeBar(true);
+                } else if (ipodState === IpodState.PLAYER) {
+                    if (!toggleVolumeBar) setToggleVolumeBar(true);
                     player.obj.setVolume(player.obj.getVolume() + 10);
                     setVolumeLevel(player.obj.getVolume());
                 };
@@ -97,15 +102,15 @@ export const handleMove = (e, context) => {
             counterClockwiseCounter++;
             if (counterClockwiseCounter % panMode.speed === 0) {
 
-                if (ipodState === 'menu' && menuSelected > 0) {
+                if (ipodState === IpodState.MENU && menuSelected > 0) {
                     setMenuSelected(menuSelected - 1);
-                } else if (ipodState === 'coverflow' && coverflowSelectedIndex > 0 && !flipCard) {
+                } else if (ipodState === IpodState.COVER_FLOW && coverflowSelectedIndex > 0 && !flipCard) {
                     setCoverflowSelectedIndex(coverflowSelectedIndex + -1)
-                } else if (ipodState === 'coverflow' && flipCardSelected > 0 && flipCard) {
+                } else if (ipodState === IpodState.COVER_FLOW && flipCardSelected > 0 && flipCard) {
                     setFlipCardSelected(flipCardSelected - 1);
-                } else if (ipodState === 'player') {
-                    
-                    if(!toggleVolumeBar) setToggleVolumeBar(true);
+                } else if (ipodState === IpodState.PLAYER) {
+
+                    if (!toggleVolumeBar) setToggleVolumeBar(true);
                     player.obj.setVolume(player.obj.getVolume() - 10);
                     setVolumeLevel(player.obj.getVolume());
                 };
@@ -113,4 +118,3 @@ export const handleMove = (e, context) => {
         };
     };
 };
-

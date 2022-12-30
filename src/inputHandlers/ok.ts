@@ -1,4 +1,8 @@
-const handleOkClick = (context, playerContext) => {
+import { MenuItem } from '../components/menu/Menu';
+import { IpodContext, IpodState } from '../contexts/IpodStateContext';
+import { PlayerContextApi } from '../contexts/PlayerContext';
+
+const handleOkClick = (context: IpodContext, playerContext: PlayerContextApi) => {
 
     const {
         ipodState,
@@ -17,16 +21,16 @@ const handleOkClick = (context, playerContext) => {
         setLoadPlaylist
     } = context;
 
-    const { setAlbum, setSong, setSongIndex,album } = playerContext
+    const { setAlbum, setSong, setSongIndex, album } = playerContext
 
 
 
     //change states with a delay
-    if (ipodState === 'screenSaver') {
+    if (ipodState === IpodState.SCREEN_SAVER) {
         setIsOn(true);
-        setIpodState('menu');
+        setIpodState(IpodState.MENU);
         updateState(setToggleScreenSaver, setToggleMenu);
-    } else if (ipodState === 'menu') {
+    } else if (ipodState === IpodState.MENU) {
         handleMenuState({
             setIpodState,
             setToggleMenu,
@@ -37,7 +41,7 @@ const handleOkClick = (context, playerContext) => {
             album
         });
 
-    } else if (ipodState === 'coverflow') {
+    } else if (ipodState === IpodState.COVER_FLOW) {
 
         if (flipCard) {
 
@@ -50,33 +54,45 @@ const handleOkClick = (context, playerContext) => {
             setLoadPlaylist(true);
 
             //change state to player
-            setIpodState('player');
+            setIpodState(IpodState.PLAYER);
             updateState(setToggleCoverflow, setTogglePlayer);
         } else {
-         
+
             setFlipCard(!flipCard);
         };
     }
 };
 export default handleOkClick;
 
+type SetStateFn = (newState: boolean) => void;
+
 //change state and unmount prev state after a delay
-const updateState = (prevState, newState) => {
+const updateState = (prevState: SetStateFn, newState: SetStateFn) => {
     newState(true);
     setTimeout(() => {
         prevState(false);
     }, 400);
 };
 
-const handleMenuState = (props) => {
+type handleMenuStateProps = {
+    setIpodState: IpodContext['setIpodState'],
+    setToggleMenu: IpodContext['setToggleMenu'],
+    setToggleCoverflow: IpodContext['setToggleCoverflow'],
+    setTogglePlayer: IpodContext['setTogglePlayer'],
+    menuSelected: IpodContext['menuSelected'],
+    setLoadPlaylist: IpodContext['setLoadPlaylist'],
+    album: PlayerContextApi['album']
+};
 
-    if (props.menuSelected === 0) {
+const handleMenuState = (props: handleMenuStateProps) => {
 
-        props.setIpodState('coverflow');
+    if (props.menuSelected === MenuItem.COVER_FLOW) {
+
+        props.setIpodState(IpodState.COVER_FLOW);
         updateState(props.setToggleMenu, props.setToggleCoverflow);
-    } else if (props.menuSelected === 1 && props.album.items) {
+    } else if (props.menuSelected === MenuItem.NOW_PLAYING && props.album?.items) {
 
-        props.setIpodState('player');
+        props.setIpodState(IpodState.PLAYER);
         updateState(props.setToggleMenu, props.setTogglePlayer);
     };
 };

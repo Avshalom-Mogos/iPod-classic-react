@@ -1,8 +1,8 @@
-.progressBarContainer{
+.progressBarContainer {
     width: 100%;
     height: 8%;
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
 
     position: absolute;
     bottom: 10%;
@@ -10,7 +10,8 @@
     transition: all 300ms linear;
 }
 
-.currentTime, .endTime{
+.currentTime,
+.endTime {
     font-size: 15px;
     font-weight: 700;
     text-align: center;
@@ -18,7 +19,7 @@
     align-items: center;
 }
 
-.progressBar{
+.progressBar {
     width: 70%;
     height: 100%;
     overflow-x: hidden;
@@ -27,10 +28,10 @@
     background: -ms-linear-gradient(bottom, rgb(211, 212, 216) 38%, rgb(245, 245, 245) 65%);
     background: -moz-linear-gradient(bottom, rgb(211, 212, 216) 38%, rgb(245, 245, 245) 65%);
     background: linear-gradient(to top, rgb(211, 212, 216) 38%, rgb(245, 245, 245) 65%);
-    -webkit-box-reflect: below 0 linear-gradient(to bottom, transparent,transparent,rgba(0,0,0,0.4));
+    -webkit-box-reflect: below 0 linear-gradient(to bottom, transparent, transparent, rgba(0, 0, 0, 0.4));
 }
 
-.progressBarFill{
+.progressBarFill {
     height: 100%;
     background: -webkit-linear-gradient(top, rgb(171, 190, 227) 0%, rgb(118, 162, 232) 44%, rgb(75, 188, 253) 61%, rgb(105, 188, 218) 82%, rgb(137, 202, 227) 98%);
     background: -o-linear-gradient(top, rgb(171, 190, 227) 0%, rgb(118, 162, 232) 44%, rgb(75, 188, 253) 61%, rgb(105, 188, 218) 82%, rgb(137, 202, 227) 98%);

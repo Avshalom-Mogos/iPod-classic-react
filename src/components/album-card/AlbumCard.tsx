@@ -1,24 +1,42 @@
-import React, { useContext, useRef, useEffect, createRef, memo } from 'react';
-import { IpodStateContext } from '../../contexts/IpodStateContext';
+import * as React from 'react';
+import { Song } from '../../contexts/data';
+import { IpodContext, IpodStateContext } from '../../contexts/IpodStateContext';
+import { useTypedContext } from '../../hooks';
 import classes from './AlbumCard.module.css';
 
 
-const AlbumCard = (props) => {
+type AlbumCardProps = {
+    index: number;
+    styles: {
+        transform: string;
+        zIndex: number;
+    } | {
+        zIndex: number;
+        transform?: undefined;
+    } | undefined;
+    name: string;
+    artist: string;
+    items: Song[];
+    cover: string;
+};
+
+const AlbumCard: React.FC<AlbumCardProps> = props => {
 
     const { name, artist, items, cover, index, styles } = props;
-    const { coverflowSelectedIndex, flipCard, flipCardSelected } = useContext(IpodStateContext);
+    const { coverflowSelectedIndex, flipCard, flipCardSelected } = useTypedContext<IpodContext>(IpodStateContext);
 
-    useEffect(() => {
-
-        if (index === coverflowSelectedIndex && flipCard) {
+    React.useEffect(() => {
+        const selectedCard = elementsRef.current[flipCardSelected].current;
+        if (index === coverflowSelectedIndex && flipCard && selectedCard) {
             //scroll to flip card scelcted
-            sctrollToView(elementsRef.current[flipCardSelected].current)
+            scrollToView(selectedCard);
         };
     })
 
     const flip = (flipCard && index === coverflowSelectedIndex) ? classes.flip : '';
 
-    const formatTime = time => {
+    // duplicate ???
+    const formatTime = (time: number) => {
         // if song duration is over 10min show 5 char string
         return time >= 600 ?
             new Date(time * 1000).toISOString().substr(14, 5)
@@ -26,15 +44,15 @@ const AlbumCard = (props) => {
             new Date(time * 1000).toISOString().substr(15, 4)
     };
 
-    const sctrollToView = (element) => {
-        const scrollIntoViewOptions = { behavior: 'smooth', block: "nearest" };
+    const scrollToView = (element: HTMLLIElement) => {
+        const scrollIntoViewOptions: ScrollIntoViewOptions = { behavior: 'smooth', block: "nearest" };
         element.scrollIntoView(scrollIntoViewOptions);
     };
 
-    const elementsRef = useRef(items.map(() => createRef()));
+    const elementsRef = React.useRef(items.map(() => React.createRef<HTMLLIElement>()));
 
     return (
-        <div className={classes.AlbumCard} style={styles}>
+        <div className={classes.albumCard} style={styles}>
             <div className={`${classes.inner} ${flip}`}>
                 <div className={classes.front}>
                     <img src={cover} alt="albumImg" />
@@ -63,4 +81,5 @@ const AlbumCard = (props) => {
         </div >
     )
 };
-export default memo(AlbumCard);
+
+export default React.memo(AlbumCard);

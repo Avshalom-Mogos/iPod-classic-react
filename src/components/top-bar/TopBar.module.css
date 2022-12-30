@@ -1,52 +1,52 @@
-.TopBar{
+.topBar {
     padding: 5px;
-    border-bottom: 1px outset rgb(118, 136, 141); 
+    border-bottom: 1px outset rgb(118, 136, 141);
     display: flex;
     justify-content: space-between;
-    background-image: linear-gradient(rgb(249, 249, 249),rgb(151, 156, 160));
+    background-image: linear-gradient(rgb(249, 249, 249), rgb(151, 156, 160));
 }
 
-.title{
+.title {
     font-weight: 800;
     font-size: 13px;
 }
 
-.icons{
+.icons {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 50px;
 }
 
-.battery{
+.battery {
     display: flex;
 }
 
-.batteryHead{
+.batteryHead {
     width: 2px;
     height: 5px;
     margin: auto 0;
     background-color: rgb(134, 152, 144);
 }
 
-.batteryBody{
+.batteryBody {
     width: 28px;
     height: 13px;
     border: 1px solid rgb(134, 152, 144);
-    background-image: linear-gradient(rgb(184, 234, 145),rgb(81, 152, 54));
-   
+    background-image: linear-gradient(rgb(184, 234, 145), rgb(81, 152, 54));
+
 }
 
-.icon{
+.icon {
     line-height: 1px;
     font-size: 0.7rem;
 }
 
-.playPause{
+.playPause {
     color: rgb(120, 200, 249);
     text-shadow: 2px 0 0 rgb(88, 144, 196), -1px 0 0 rgb(88, 144, 196), 0 1px 0 rgb(88, 144, 196), 0 -1px 0 rgb(88, 144, 196), 1px 1px rgb(88, 144, 196), -1px -1px 0 rgb(88, 144, 196), 1px -1px 0 rgb(88, 144, 196), -1px 1px 0 rgb(88, 144, 196);
 }
 
-.spinner{
+.spinner {
     color: darkgreen;
 }

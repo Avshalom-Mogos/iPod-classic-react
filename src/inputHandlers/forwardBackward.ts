@@ -1,22 +1,24 @@
+import { IpodContext, IpodState } from '../contexts/IpodStateContext';
+
 const holdState = {
     active: false,
     duration: 0,
-    intervalId: 0
+    intervalId: -1
 };
 
-export const handleForwardBackwardDown = (context, action) => {
+export const handleForwardBackwardDown = (context: IpodContext, action: 'rewind' | 'fastForward') => {
 
 
     const { ipodState, player, toggleVolumeBar } = context;
 
-    if (ipodState === 'player' && !toggleVolumeBar) {
+    if (ipodState === IpodState.PLAYER && !toggleVolumeBar) {
 
         //check for hold state
-        const interval = setInterval(() => {
+        const interval = window.setInterval(() => {
             holdState.duration++;
-            holdState.active = holdState.duration > 25 ? true : false;
+            holdState.active = holdState.duration > 25;
 
-            if (holdState.active) actions[action](player.obj);
+            if (holdState.active && player.obj) actions[action](player.obj);
 
         }, 10);
 
@@ -24,9 +26,11 @@ export const handleForwardBackwardDown = (context, action) => {
     };
 };
 
+const allowSeekAhead = true; // check this - needed ??
+
 const actions = {
-    fastForward: (player) => player.seekTo(player.getCurrentTime() + 1),
-    rewind: (player) => player.seekTo(player.getCurrentTime() - 1),
+    fastForward: (player: YT.Player) => player.seekTo(player.getCurrentTime() + 1, allowSeekAhead),
+    rewind: (player: YT.Player) => player.seekTo(player.getCurrentTime() - 1, allowSeekAhead),
 };
 
 export const stopHoldState = () => {
@@ -35,7 +39,7 @@ export const stopHoldState = () => {
     clearInterval(holdState.intervalId);
 };
 
-export const handleForwardBackwardUp = (context, direction) => {
+export const handleForwardBackwardUp = (context: IpodContext, direction: 'right' | 'left') => {
 
     const {
         ipodState,
@@ -47,7 +51,7 @@ export const handleForwardBackwardUp = (context, direction) => {
         toggleVolumeBar
     } = context;
 
-    if (ipodState === 'player' && !toggleVolumeBar) {
+    if (ipodState === IpodState.PLAYER && !toggleVolumeBar) {
 
         // if hold state active stop it and exit function
         if (holdState.active) {
@@ -57,14 +61,14 @@ export const handleForwardBackwardUp = (context, direction) => {
 
         //normal click
         stopHoldState();
-        if (direction === 'right')  {
+        if (direction === 'right' && player.obj) {
             player.obj.nextVideo();
-        } else if (direction === 'left') {
+        } else if (direction === 'left' && player.obj) {
             player.obj.previousVideo();
         };
-      
 
-    } else if (ipodState === 'coverflow') {
+
+    } else if (ipodState === IpodState.COVER_FLOW) {
 
         if (direction === 'right' && coverflowSelectedIndex < albums.length - 1 && !flipCard) {
             setCoverflowSelectedIndex(coverflowSelectedIndex + 1)
@@ -73,5 +77,3 @@ export const handleForwardBackwardUp = (context, direction) => {
         };
     };
 };
-
-

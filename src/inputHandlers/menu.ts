@@ -1,4 +1,6 @@
-const handleMenuClick = (context) => {
+import { IpodContext, IpodState } from '../contexts/IpodStateContext';
+
+const handleMenuClick = (context: IpodContext) => {
 
     const {
         ipodState,
@@ -14,36 +16,39 @@ const handleMenuClick = (context) => {
 
     switch (ipodState) {
 
-        case 'coverflow':
+        case IpodState.COVER_FLOW:
             if (flipCard) {
                 setFlipCard(!flipCard);
                 return
             };
             setFlipCard(false);
-            setIpodState('menu');
+            setIpodState(IpodState.MENU);
             updateState(setToggleCoverflow, setToggleMenu);
             break;
 
-        case 'player':
+        case IpodState.PLAYER:
 
-            if(toggleVolumeBar){
+            if (toggleVolumeBar) {
                 setToggleVolumeBar(!toggleVolumeBar);
                 break;
             };
 
             setFlipCard(false);
-            setIpodState('coverflow');
+            setIpodState(IpodState.COVER_FLOW);
             updateState(setTogglePlayer, setToggleCoverflow);
             break;
-            
+
         default:
         // code block ??
     };
 };
+
 export default handleMenuClick;
 
+type SetStateFn = (newState: boolean) => void;
+
 //change state and unmount prev state after a delay
-const updateState = (prevState, newState) => {
+const updateState = (prevState: SetStateFn, newState: SetStateFn) => {
     newState(true);
     setTimeout(() => {
         prevState(false);

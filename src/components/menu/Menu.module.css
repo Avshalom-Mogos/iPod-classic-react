@@ -1,39 +1,43 @@
-.Menu{
+.menu {
     width: 100%;
     height: 100%;
     animation: slide-in 400ms ease-out forwards;
     position: absolute;
 }
 
-@keyframes slide-in{
-    from {transform: translateX(100%);}
-    to {transform: translateX(0);}
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
-.leftPanel{
+.leftPanel {
     width: 50%;
     height: 100%;
     background-color: white;
     float: left;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
 }
 
-.items{
+.items {
     flex-grow: 1;
 }
 
-.items ul{
+.items ul {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.items li{
-   
+.items li {
     list-style: none;
     height: 25%;
     font-size: 14px;
@@ -43,24 +47,28 @@
     justify-content: space-between;
 }
 
-.items li p{
+.items li p {
     margin: auto 0;
 }
 
-.items li i{
+.items li i {
     margin: auto 0;
     font-size: 13px;
     color: white;
 }
 
-.selected{
+.selected {
     border-bottom: 1px outset rgb(75, 142, 213);
     border-top: 1px outset rgb(75, 142, 213);
-    background-image: linear-gradient(rgb(93, 168, 231),rgb(48, 130, 219));
+    background-image: linear-gradient(rgb(93, 168, 231), rgb(48, 130, 219));
     color: white;
 }
 
-.img{
+.disabled {
+    opacity: 0.5;
+}
+
+.img {
     width: 50%;
     height: 100%;
     float: right;

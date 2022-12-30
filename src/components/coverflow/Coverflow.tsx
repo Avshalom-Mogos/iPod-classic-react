@@ -1,19 +1,20 @@
-import React, { useContext, useEffect, memo } from 'react';
+import * as React from 'react';
 import TopBar from "../top-bar/TopBar";
 import AlbumCard from '../album-card/AlbumCard';
-import { IpodStateContext } from '../../contexts/IpodStateContext';
+import { IpodState, IpodStateContext } from '../../contexts/IpodStateContext';
 import classes from './Coverflow.module.css';
+import { useTypedContext } from '../../hooks';
 
 
-const Coverflow = () => {
+const Coverflow: React.FC<{}> = () => {
 
     const {
         ipodState,
         coverflowSelectedIndex,
         albums,
-        setZindex,
+        getZindexValue,
         setFlipCardSelected
-    } = useContext(IpodStateContext);
+    } = useTypedContext(IpodStateContext);
 
     const ROTATION = 75;
     const BASE_ZINDEX = 10;
@@ -21,21 +22,18 @@ const Coverflow = () => {
     const WIDTH = 65;
     const WIDTH_AFTER_ROTATION = 23;
 
-    useEffect(() => {
-        setFlipCardSelected(0)
-
+    React.useEffect(() => {
+        setFlipCardSelected(0);
     }, [ipodState, coverflowSelectedIndex, setFlipCardSelected]);
 
 
-    const styles = index => {
-
+    const styles = (index: number) => {
         const leftOfSelected = index < coverflowSelectedIndex;
         const selected = index === coverflowSelectedIndex;
         const rightOfSelected = index > coverflowSelectedIndex;
 
-
         if (leftOfSelected) {
-            const  calcSpaceBetween = index + 1 === coverflowSelectedIndex
+            const calcSpaceBetween = index + 1 === coverflowSelectedIndex
                 ? (WIDTH)
                 : (WIDTH + (WIDTH_AFTER_ROTATION * (coverflowSelectedIndex - (index + 1))));
 
@@ -54,7 +52,7 @@ const Coverflow = () => {
         };
 
         if (rightOfSelected) {
-            const  calcSpaceBetween = index + 1 === coverflowSelectedIndex
+            const calcSpaceBetween = index + 1 === coverflowSelectedIndex
                 ? (WIDTH)
                 : (WIDTH + (WIDTH_AFTER_ROTATION * ((index - 1) - coverflowSelectedIndex)));
 
@@ -66,7 +64,7 @@ const Coverflow = () => {
     };
 
     return (
-        <div className={classes.Coverflow} style={{ zIndex: setZindex('coverflow') }}>
+        <div className={classes.coverflow} style={{ zIndex: getZindexValue(IpodState.COVER_FLOW) }}>
             <TopBar title='Cover Flow' />
             <div className={classes.container}>
                 <div className={classes.items}>
@@ -92,4 +90,5 @@ const Coverflow = () => {
         </div>
     )
 };
-export default memo(Coverflow);
+
+export default React.memo(Coverflow);

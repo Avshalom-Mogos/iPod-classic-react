@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import IpodScreen from '../ipod-screen/IpodScreen';
 import IpodButtons from '../ipod-buttons/IpodButtons';
 import YoutubeLoader from '../youtube-loader/YoutubeLoader';
@@ -7,9 +7,9 @@ import { PlayerProvider } from '../../contexts/PlayerContext';
 import classes from './Ipod.module.css';
 
 
-const Ipod = () => {
+const Ipod: React.FC<{}> = () => {
     return (
-        <div className={classes.Ipod}>
+        <div className={classes.ipod}>
             <IpodStateProvider>
                 <PlayerProvider>
                     <IpodScreen />
@@ -20,4 +20,5 @@ const Ipod = () => {
         </div>
     )
 };
+
 export default Ipod;

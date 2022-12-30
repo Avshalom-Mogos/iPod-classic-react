@@ -1,12 +1,12 @@
-.Ipod{
+.ipod {
     height: 100%;
     width: 100%;
     max-width: 430px;
     max-height: 830px;
-    background-image: linear-gradient(rgb(98, 96, 99),rgb(46, 46, 46));
+    background-image: linear-gradient(rgb(98, 96, 99), rgb(46, 46, 46));
     margin: auto auto;
     /* background-image: linear-gradient(rgb(193, 193, 193),rgb(230, 230, 230)); OLD  */
-    border-radius: 20px; 
+    border-radius: 20px;
     border-right: #C3CAD2 5px outset;
     border-left: #909599 5px outset;
     border-top: #D2D5DA 5px outset;
@@ -15,8 +15,8 @@
 }
 
 @media screen and (max-width: 430px) {
-    .Ipod {
+    .ipod {
         border: none;
-        border-radius: 0; 
+        border-radius: 0;
     }
 }

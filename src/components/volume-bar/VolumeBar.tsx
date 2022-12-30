@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import * as React from 'react';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
+import { useTypedContext } from '../../hooks';
 import classes from './VolumeBar.module.css';
 
 
-const VolumeBar = () => {
+const VolumeBar: React.FC<{}> = () => {
 
-    const { volumeLevel, toggleVolumeBar } = useContext(IpodStateContext);
-
+    const { volumeLevel, toggleVolumeBar } = useTypedContext(IpodStateContext);
     const slide = toggleVolumeBar ? { transform: 'translateX(-100%)' } : {};
 
     return (
@@ -15,7 +15,7 @@ const VolumeBar = () => {
                 <i className="fas fa-volume-off"></i>
             </div>
             <div className={classes.volumeBar}>
-                <div className={classes.volumeBarFill} style={{ width: volumeLevel + "%" }}></div>
+                <div className={classes.volumeBarFill} style={{ width: `${volumeLevel}%` }}></div>
             </div>
             <div className={classes.volEnd}>
                 <i className="fas fa-volume-up"></i>
@@ -23,4 +23,5 @@ const VolumeBar = () => {
         </div >
     )
 };
+
 export default VolumeBar;

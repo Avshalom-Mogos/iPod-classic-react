@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import * as React from 'react';
 import { handleDown, StopPanMode, handleMove } from '../../inputHandlers/wheel';
 import { handleForwardBackwardUp, handleForwardBackwardDown, stopHoldState } from '../../inputHandlers/forwardBackward';
 import handleOkClick from '../../inputHandlers/ok';
@@ -7,15 +7,16 @@ import handlePlayPauseClick from '../../inputHandlers/playPause';
 import { IpodStateContext } from '../../contexts/IpodStateContext';
 import { PlayerContext } from '../../contexts/PlayerContext';
 import classes from './IpodButtons.module.css';
+import { useTypedContext } from '../../hooks';
 
 
-const IpodButtons = () => {
+const IpodButtons: React.FC<{}> = () => {
 
-    const context = useContext(IpodStateContext);
-    const playerContext = useContext(PlayerContext);
+    const context = useTypedContext(IpodStateContext);
+    const playerContext = useTypedContext(PlayerContext);
 
     return (
-        <div className={classes.IpodButtons}>
+        <div className={classes.ipodButtons}>
 
             <div
                 className={classes.wheel}
@@ -34,7 +35,8 @@ const IpodButtons = () => {
                 <button
                     className={classes.menu}
                     onClick={() => handleMenuClick(context)}
-                >MENU
+                >
+                    MENU
                 </button>
 
                 <button className={classes.backward}>
@@ -76,4 +78,5 @@ const IpodButtons = () => {
         </div >
     )
 };
+
 export default IpodButtons;
