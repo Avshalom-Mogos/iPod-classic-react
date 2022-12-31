@@ -13,10 +13,16 @@ const Player: React.FC<{}> = () => {
     const { player, loadPlaylist, setLoadPlaylist } = useTypedContext(IpodStateContext);
     const { album, song, songIndex } = useTypedContext(PlayerContext);
 
-    React.useEffect(() => {
+    const maybeUnmute = (playerApi: YT.Player) => {
+        if (playerApi.isMuted()) {
+            playerApi.unMute();
+        }
+    };
 
+    React.useEffect(() => {
         //prevent reload when coming from Menu
         if (loadPlaylist && player.obj) {
+            maybeUnmute(player.obj);
             //@ts-ignore - check correct payload 
             player.obj.loadPlaylist({
                 listType: 'playlist',

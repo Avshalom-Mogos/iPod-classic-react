@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Song } from '../../contexts/data';
 import { IpodContext, IpodStateContext } from '../../contexts/IpodStateContext';
 import { useTypedContext } from '../../hooks';
+import { classNames } from '../../utils';
 import classes from './AlbumCard.module.css';
 
 
@@ -33,8 +34,6 @@ const AlbumCard: React.FC<AlbumCardProps> = props => {
         };
     })
 
-    const flip = (flipCard && index === coverflowSelectedIndex) ? classes.flip : '';
-
     // duplicate ???
     const formatTime = (time: number) => {
         // if song duration is over 10min show 5 char string
@@ -53,7 +52,7 @@ const AlbumCard: React.FC<AlbumCardProps> = props => {
 
     return (
         <div className={classes.albumCard} style={styles}>
-            <div className={`${classes.inner} ${flip}`}>
+            <div className={classNames(classes.inner, { [classes.flip]: flipCard && index === coverflowSelectedIndex })}>
                 <div className={classes.front}>
                     <img src={cover} alt="albumImg" />
                 </div>
@@ -67,7 +66,7 @@ const AlbumCard: React.FC<AlbumCardProps> = props => {
                             return (
                                 <li
                                     key={i}
-                                    className={i === flipCardSelected ? classes.selected : ''}
+                                    className={classNames({ [classes.selected]: i === flipCardSelected })}
                                     ref={elementsRef.current[i]}
                                 >
                                     <span>{song.title}</span>
