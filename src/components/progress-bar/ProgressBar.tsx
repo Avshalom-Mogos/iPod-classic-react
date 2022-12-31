@@ -8,15 +8,17 @@ type ProgressBarProps = {
     duration: number;
 };
 
+const INVALID_INTERVAL_ID = -1;
+
 const ProgressBar: React.FC<ProgressBarProps> = props => {
 
     const { duration } = props;
     const { player, toggleCoverflow, toggleVolumeBar } = useTypedContext(IpodStateContext);
     const [currentTime, setCurrentTime] = React.useState(0);
-    const intervalId = React.useRef<number>(-1);
+    const intervalId = React.useRef<number>(INVALID_INTERVAL_ID);
 
     React.useEffect(() => {
-        if (player.state === Youtube.PlayerState.PLAYING && player.obj && intervalId.current === null) {
+        if (player.state === Youtube.PlayerState.PLAYING && player.obj && intervalId.current === INVALID_INTERVAL_ID) {
 
             const id = window.setInterval((playerObj: YT.Player) => {
                 setCurrentTime(playerObj.getCurrentTime());
@@ -25,7 +27,7 @@ const ProgressBar: React.FC<ProgressBarProps> = props => {
             intervalId.current = id;
         } else {
             clearInterval(intervalId.current);
-            intervalId.current = -1;
+            intervalId.current = INVALID_INTERVAL_ID;
         };
     }, [player.state, player.obj]);
 

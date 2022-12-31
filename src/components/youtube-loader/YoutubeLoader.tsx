@@ -12,7 +12,6 @@ const YoutubeLoader = () => {
     const opts: Options = {
         height: '0',
         width: '0',
-        // host: 'https://www.youtube.com', --> needed ??
         playerVars: {}
     };
 

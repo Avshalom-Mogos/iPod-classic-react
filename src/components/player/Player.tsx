@@ -23,15 +23,27 @@ const Player: React.FC<{}> = () => {
         //prevent reload when coming from Menu
         if (loadPlaylist && player.obj) {
             maybeUnmute(player.obj);
-            //@ts-ignore - check correct payload 
-            player.obj.loadPlaylist({
-                listType: 'playlist',
-                list: album?.id,
-                index: songIndex
-            });
+
+            const loadCurrentPLaylist = () => {
+                player.obj?.loadPlaylist({
+                    listType: 'playlist',
+                    list: album?.id || '',
+                    index: songIndex
+                });
+            }
+
+            loadCurrentPLaylist();
+
+            //https://stackoverflow.com/a/69244489
+            if (album?.id && player.state !== YT.PlayerState.BUFFERING) {
+                setTimeout(() => {
+                    loadCurrentPLaylist()
+                }, 500)
+            }
+
             setLoadPlaylist(false);
         };
-    }, [album?.id, player.obj, loadPlaylist, setLoadPlaylist, songIndex]);
+    }, [loadPlaylist]);
 
 
     return (

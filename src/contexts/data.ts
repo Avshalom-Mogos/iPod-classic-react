@@ -160,7 +160,7 @@ export const albumsData: Album[] = [
         ],
     },
     {
-        id: 'PLSA552_AAwVe1EDE_IkIseryGr3K7Ik3S',
+        id: 'OLAK5uy_kQbMBLWm9sUrVNnooayU8ilISrC7KintI',
         name: 'whenWeAllFallAsleepWhereDoWeGo',
         artist: 'Billie Eilish',
         cover: './images/whenWeAllFallAsleepWhereDoWeGo.png',
@@ -238,7 +238,7 @@ export const albumsData: Album[] = [
         ],
     },
     {
-        id: 'PL0Wbig4PvIvNvnSK4g7yTk9-p-11T7Z-B',
+        id: 'PLUuiba6ko477n-wQKLuduf8PlNtdQ3M4x',
         name: 'DAMN.',
         artist: 'Kendrick Lamar',
         cover: './images/damn.png',
@@ -316,7 +316,7 @@ export const albumsData: Album[] = [
         ],
     },
     {
-        id: 'PLPObKp282vT6islVoFIul55FN1PyYijeA',
+        id: 'PLf5BnbCRqFj5D6s4L-BB01K9fP537b2b8',
         name: 'The Fame',
         artist: 'Lady Gaga',
         cover: './images/theFame.png',
