@@ -6,5 +6,5 @@ export const useTypedContext = <T>(myContext: React.Context<T | null>): T => {
         throw new Error("context is undefined")
     }
 
-    return context
+    return context;
 };
