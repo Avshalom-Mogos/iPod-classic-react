@@ -4,7 +4,7 @@ import { IpodState, IpodStateContext } from '../../contexts/IpodStateContext';
 import { PlayerContext } from "../../contexts/PlayerContext";
 import classes from './Menu.module.css';
 import { useTypedContext } from '../../hooks';
-import { classNames } from '../../utils';
+import { classNames, getPublicImagePath } from '../../utils';
 
 export enum MenuItem {
     COVER_FLOW,
@@ -70,7 +70,7 @@ const Menu: React.FC<{}> = () => {
                     </ul>
                 </div>
             </div>
-            <img className={classes.img} src={getMenuCover()} alt="selectedImg"></img>
+            <img className={classes.img} src={getPublicImagePath(getMenuCover())} alt="selectedImg"></img>
         </div>
     )
 };

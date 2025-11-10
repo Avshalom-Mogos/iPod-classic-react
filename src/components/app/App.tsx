@@ -8,7 +8,7 @@ const App: React.FC<{}> = () => {
     <div className={classes.app}>
       <div 
         className={classes.appBackground}
-        style={{ backgroundImage: 'url(/images/background.jpg)' }}
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/background.jpg)` }}
       />
       <Ipod />
     </div>

@@ -40,3 +40,18 @@ const handleConditionalClass = (conditionalClass: ConditionalClass): string[] =>
 
     return classes;
 };
+
+export const getPublicImagePath = (path: string): string => {
+    // If path already starts with http/https, return as is (external URLs)
+    if (path.startsWith('http')) {
+        return path;
+    }
+    // If path already starts with PUBLIC_URL, return as is
+    const publicUrl = process.env.PUBLIC_URL || '';
+    if (publicUrl && path.startsWith(publicUrl)) {
+        return path;
+    }
+    // Remove leading ./ if present and prepend PUBLIC_URL
+    const cleanPath = path.replace(/^\.\//, '');
+    return publicUrl ? `${publicUrl}/${cleanPath}` : `/${cleanPath}`;
+};

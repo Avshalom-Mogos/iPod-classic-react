@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Song } from '../../contexts/data';
 import { IpodContext, IpodStateContext } from '../../contexts/IpodStateContext';
 import { useTypedContext } from '../../hooks';
-import { classNames } from '../../utils';
+import { classNames, getPublicImagePath } from '../../utils';
 import classes from './AlbumCard.module.css';
 
 
@@ -54,7 +54,7 @@ const AlbumCard: React.FC<AlbumCardProps> = props => {
         <div className={classes.albumCard} style={styles}>
             <div className={classNames(classes.inner, { [classes.flip]: flipCard && index === coverflowSelectedIndex })}>
                 <div className={classes.front}>
-                    <img src={cover} alt="albumImg" />
+                    <img src={getPublicImagePath(cover)} alt="albumImg" />
                 </div>
                 <div className={classes.back}>
                     <div className={classes.albumInfo}>

@@ -6,6 +6,7 @@ import { IpodStateContext } from '../../contexts/IpodStateContext';
 import { PlayerContext } from '../../contexts/PlayerContext';
 import classes from './Player.module.css';
 import { useTypedContext } from '../../hooks';
+import { getPublicImagePath } from '../../utils';
 
 
 const Player: React.FC<{}> = () => {
@@ -51,7 +52,7 @@ const Player: React.FC<{}> = () => {
             <TopBar title='Now Playing' />
             <div className={classes.container}>
                 <div className={classes.songInfoContainer}>
-                    <img src={album?.cover} alt="albumCover" />
+                    <img src={album?.cover ? getPublicImagePath(album.cover) : undefined} alt="albumCover" />
                     <div className={classes.songInfo}>
                         <p className={classes.songInfoTitle}>{song?.title}</p>
                         <p className={classes.songInfoArtist}>{album?.artist}</p>
