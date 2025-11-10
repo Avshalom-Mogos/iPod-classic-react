@@ -6,6 +6,10 @@ import classes from './App.module.css';
 const App: React.FC<{}> = () => {
   return (
     <div className={classes.app}>
+      <div 
+        className={classes.appBackground}
+        style={{ backgroundImage: 'url(/images/background.jpg)' }}
+      />
       <Ipod />
     </div>
   );
