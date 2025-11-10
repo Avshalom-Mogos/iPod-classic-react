@@ -3,21 +3,17 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "13.1.0",
-    "npm": "6.12.1"
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-youtube": "^7.11.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -47,5 +43,6 @@
     "@types/youtube": "0.0.47",
     "gh-pages": "^2.2.0",
     "typescript": "^3.9.10"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
