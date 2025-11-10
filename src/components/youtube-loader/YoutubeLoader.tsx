@@ -35,6 +35,7 @@ const YoutubeLoader = () => {
 
     return (
         <Youtube
+            videoId=""
             opts={opts}
             onReady={onReady}
             onStateChange={onStateChange}
